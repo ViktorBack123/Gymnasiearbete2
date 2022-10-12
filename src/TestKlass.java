@@ -3,7 +3,6 @@ public class TestKlass {
         System.out.println("detta är viktor");
         System.out.println("tja");
         System.out.println("men nu är det bosse");
-
-        System.out.println("hejjjj");
+        System.out.println("HEHEHAH");
     }
 }
