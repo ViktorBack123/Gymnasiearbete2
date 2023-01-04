@@ -15,6 +15,8 @@ public class Main extends JFrame {
         final int goalLine = 650;
         Dimension dimension = new Dimension(touchline, goalLine);
 
+
+
         final Color color = Color.GREEN;
 
         Pitch pitch = new Pitch(touchline, goalLine, color);
