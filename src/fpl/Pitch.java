@@ -8,7 +8,6 @@ public class Pitch extends JPanel {
     private final int goalLine;
     private final Color color;
 
-
     public Pitch(int touchline, int goalLine, Color color) {
         this.touchline = touchline;
         this.goalLine = goalLine;
