@@ -11,8 +11,8 @@ public class Main extends JFrame {
     public Main() {
         setLayout(null);
 
-        final int touchline = 1200;
-        final int goalLine = 650;
+        final int touchline = 1100;
+        final int goalLine = 690;
         Dimension dimension = new Dimension(touchline, goalLine);
 
 
