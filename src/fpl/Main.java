@@ -17,7 +17,7 @@ public class Main extends JFrame {
 
         final Color color = Color.GREEN;
 
-        Pitch pitch = new Pitch(touchline, goalLine, color);
+        Pitch pitch = new Pitch();
         pitch.setSize(dimension);
         add(pitch);
 
