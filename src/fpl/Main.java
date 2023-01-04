@@ -21,7 +21,7 @@ public class Main extends JFrame {
         pitch.setSize(dimension);
         add(pitch);
 
-
+        setSize(dimension);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
