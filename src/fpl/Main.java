@@ -11,8 +11,8 @@ public class Main extends JFrame {
     public Main() {
         setLayout(null);
 
-        final int touchline = 120;
-        final int goalLine = 65;
+        final int touchline = 1200;
+        final int goalLine = 650;
         Dimension dimension = new Dimension(touchline, goalLine);
 
         final Color color = Color.GREEN;
