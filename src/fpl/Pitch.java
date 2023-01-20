@@ -14,7 +14,6 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 
 public class Pitch extends JPanel {
-    private static final long serialVersionUID = 1L;
 
     public Pitch() {
         setBackground(new Color(0, 128, 0));
@@ -27,10 +26,10 @@ public class Pitch extends JPanel {
         Graphics2D g2 = (Graphics2D) g.create();
         double width = getWidth();
         double height = getHeight();
-        double fieldLength = 110d;
-        double fieldWidth = 70d;
-        double scaleWidth = fieldLength+2;
-        double scaleHeight = fieldWidth+2;
+        double pitchWidth = 70d;
+        double pitchLength = 110d;
+        double scaleWidth = pitchWidth+2;
+        double scaleHeight = pitchLength+2;
         double scale;
         if((width/height) >= (110d/70d)) {
             scale = height/scaleHeight;
@@ -42,82 +41,82 @@ public class Pitch extends JPanel {
         g2.setColor(Color.WHITE);
         Stroke stroke = new BasicStroke(5/36);
         g2.setStroke(stroke);
-        drawTouchLines(g2, fieldLength, fieldWidth);
-        drawGoalLines(g2, fieldLength, fieldWidth);
-        drawCenterLine(g2, fieldLength, fieldWidth);
-        drawCenterCircle(g2, fieldLength, fieldWidth);
-        drawCenterMark(g2, fieldLength, fieldWidth);
-        drawCornerArches(g2, fieldLength, fieldWidth);
-        drawGoals(g2, fieldLength, fieldWidth);
-        drawGoalAreas(g2, fieldLength, fieldWidth);
-        drawPenaltyAreas(g2, fieldLength, fieldWidth);
-        drawPenaltyMarks(g2, fieldLength, fieldWidth);
-        drawPenaltyArches(g2, fieldLength, fieldWidth);
+        drawTouchLines(g2, pitchWidth, pitchLength);
+        drawGoalLines(g2, pitchWidth, pitchLength);
+        drawCenterLine(g2, pitchWidth, pitchLength);
+        drawCenterCircle(g2, pitchWidth, pitchLength);
+        drawCenterMark(g2, pitchWidth, pitchLength);
+        drawCornerArches(g2, pitchWidth, pitchLength);
+        drawGoals(g2, pitchWidth, pitchLength);
+        drawGoalAreas(g2, pitchWidth, pitchLength);
+        drawPenaltyAreas(g2, pitchWidth, pitchLength);
+        drawPenaltyMarks(g2, pitchWidth, pitchLength);
+        drawPenaltyArches(g2, pitchWidth, pitchLength);
     }
 
-    private void drawPenaltyArches(Graphics2D g2, double fieldLength,
-                                   double fieldWidth) {
+    private void drawPenaltyArches(Graphics2D g2, double pitchWidth,
+                                   double pitchLength) {
 //		double extent = 2*Math.toDegrees(Math.acos(6d/10d));
         double extent = 106.26020470831196d;
-        g2.draw(new Arc2D.Double(fieldLength-12-10, (fieldWidth/2)-10, 20, 20, 180-(extent/2), extent, Arc2D.OPEN));
-        g2.draw(new Arc2D.Double(12-10, (fieldWidth/2)-10, 20, 20, -extent/2, extent, Arc2D.OPEN));
+        g2.draw(new Arc2D.Double((pitchWidth/2)-10, pitchLength-12-10, 20, 20, 90-(extent/2), extent, Arc2D.OPEN));
+        g2.draw(new Arc2D.Double((pitchWidth/2)-10, 12-10, 20, 20, 270-(extent/2), extent, Arc2D.OPEN));
     }
 
-    private void drawPenaltyMarks(Graphics2D g2, double fieldLength,
-                                  double fieldWidth) {
-        g2.fill(new Ellipse2D.Double(fieldLength-12-(10d/36), (fieldWidth/2)-(10d/36), (20d/36), (20d/36)));
-        g2.fill(new Ellipse2D.Double(12-(10d/36), (fieldWidth/2)-(10d/36), (20d/36), (20d/36)));
+    private void drawPenaltyMarks(Graphics2D g2, double pitchWidth,
+                                  double pitchLength) {
+        g2.fill(new Ellipse2D.Double((pitchWidth/2)-(10d/36), pitchLength-12-(10d/36), (20d/36), (20d/36)));
+        g2.fill(new Ellipse2D.Double((pitchWidth/2)-(10d/36), 12-(10d/36), (20d/36), (20d/36)));
     }
 
-    private void drawPenaltyAreas(Graphics2D g2, double fieldLength,
-                                  double fieldWidth) {
-        g2.draw(new Rectangle2D.Double(0, (fieldWidth/2)-22, 18, 42));
-        g2.draw(new Rectangle2D.Double(fieldLength-18, (fieldWidth/2)-22, 18, 42));
+    private void drawPenaltyAreas(Graphics2D g2, double pitchWidth,
+                                  double pitchLength) {
+        g2.draw(new Rectangle2D.Double((pitchWidth/2)-22, 0, 42, 18));
+        g2.draw(new Rectangle2D.Double((pitchWidth/2)-22, pitchLength-18, 42, 18));
     }
 
-    private void drawGoalAreas(Graphics2D g2, double fieldLength,
-                               double fieldWidth) {
-        g2.draw(new Rectangle2D.Double(0, (fieldWidth/2)-10, 6, 20));
-        g2.draw(new Rectangle2D.Double(fieldLength-6, (fieldWidth/2)-10, 6, 20));
+    private void drawGoalAreas(Graphics2D g2, double pitchWidth,
+                               double pitchLength) {
+        g2.draw(new Rectangle2D.Double((pitchWidth/2)-10, 0, 20, 6));
+        g2.draw(new Rectangle2D.Double((pitchWidth/2)-10, pitchLength-6, 20, 6));
     }
 
-    private void drawGoals(Graphics2D g2, double fieldLength, double fieldWidth) {
-        g2.draw(new Rectangle2D.Double(-1, (fieldWidth/2)-4, 1, 8));
-        g2.draw(new Rectangle2D.Double(fieldLength, (fieldWidth/2)-4, 1, 8));
+    private void drawGoals(Graphics2D g2, double pitchWidth, double pitchLength) {
+        g2.draw(new Rectangle2D.Double((pitchWidth/2)-4, -1, 8, 1));
+        g2.draw(new Rectangle2D.Double((pitchWidth/2)-4, pitchLength, 8, 1));
     }
 
-    private void drawCornerArches(Graphics2D g2, double fieldLength,
-                                  double fieldWidth) {
+    private void drawCornerArches(Graphics2D g2, double pitchWidth,
+                                  double pitchLength) {
         g2.draw(new Arc2D.Double(-1, -1, 2, 2, 270, 90, Arc2D.OPEN));
-        g2.draw(new Arc2D.Double(fieldLength-1, -1, 2, 2, 180, 90, Arc2D.OPEN));
-        g2.draw(new Arc2D.Double(fieldLength-1, fieldWidth-1, 2, 2, 90, 90, Arc2D.OPEN));
-        g2.draw(new Arc2D.Double(-1, fieldWidth-1, 2, 2, 0, 90, Arc2D.OPEN));
+        g2.draw(new Arc2D.Double(pitchWidth-1, -1, 2, 2, 180, 90, Arc2D.OPEN));
+        g2.draw(new Arc2D.Double(pitchWidth-1, pitchLength-1, 2, 2, 90, 90, Arc2D.OPEN));
+        g2.draw(new Arc2D.Double(-1, pitchLength-1, 2, 2, 0, 90, Arc2D.OPEN));
     }
 
-    private void drawCenterMark(Graphics2D g2, double fieldLength,
-                                double fieldWidth) {
-        g2.fill(new Ellipse2D.Double((fieldLength/2)-(10d/36), (fieldWidth/2)-(10d/36), (20d/36), (20d/36)));
+    private void drawCenterMark(Graphics2D g2, double pitchWidth,
+                                double pitchLength) {
+        g2.fill(new Ellipse2D.Double((pitchWidth/2)-(10d/36), (pitchLength/2)-(10d/36), (20d/36), (20d/36)));
     }
 
-    private void drawCenterCircle(Graphics2D g2, double fieldLength,
-                                  double fieldWidth) {
-        g2.draw(new Ellipse2D.Double((fieldLength/2)-10, (fieldWidth/2)-10, 20, 20));
+    private void drawCenterCircle(Graphics2D g2, double pitchWidth,
+                                  double pitchLength) {
+        g2.draw(new Ellipse2D.Double((pitchWidth/2)-10, (pitchLength/2)-10, 20, 20));
     }
 
-    private void drawCenterLine(Graphics2D g2, double fieldLength,
-                                double fieldWidth) {
-        g2.draw(new Line2D.Double(fieldLength/2, 0, fieldLength/2, fieldWidth));
+    private void drawCenterLine(Graphics2D g2, double pitchWidth,
+                                double pitchLength) {
+        g2.draw(new Line2D.Double(0,pitchLength/2, pitchWidth, pitchLength/2));
     }
 
-    private void drawGoalLines(Graphics2D g2, double fieldLength,
-                               double fieldWidth) {
-        g2.draw(new Line2D.Double(0, 0, 0, fieldWidth));
-        g2.draw(new Line2D.Double(fieldLength, 0, fieldLength, fieldWidth));
+    private void drawGoalLines(Graphics2D g2, double pitchWidth,
+                               double pitchLength) {
+        g2.draw(new Line2D.Double(0, 0, 0, pitchLength));
+        g2.draw(new Line2D.Double(pitchWidth, 0, pitchWidth, pitchLength));
     }
 
-    private void drawTouchLines(Graphics2D g2, double fieldLength,
-                                double fieldWidth) {
-        g2.draw(new Line2D.Double(0, 0, fieldLength, 0));
-        g2.draw(new Line2D.Double(0, fieldWidth, fieldLength, fieldWidth));
+    private void drawTouchLines(Graphics2D g2, double pitchWidth,
+                                double pitchLength) {
+        g2.draw(new Line2D.Double(0, 0, pitchWidth, 0));
+        g2.draw(new Line2D.Double(0, pitchLength, pitchWidth, pitchLength));
     }
 }
