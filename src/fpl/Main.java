@@ -11,15 +11,17 @@ public class Main extends JFrame {
     public Main() {
         setLayout(null);
 
-        final int pitchLength = 550;
-        final int pitchWidth = 350;
-        Dimension dimension = new Dimension(pitchWidth, pitchLength);
 
+        Dimension dimension = new Dimension(550, 350);
 
+        double width = 550d;
+        double height = 350d;
+        double pitchWidth = 70d;
+        double pitchLength = 110d;
+        Color color = Color.WHITE;
+        Stroke stroke = new BasicStroke(5/36);
 
-        final Color color = Color.GREEN;
-
-        Pitch pitch = new Pitch();
+        Pitch pitch = new Pitch(width, height, pitchWidth, pitchLength, color, stroke);
         pitch.setSize(dimension);
         add(pitch);
 
