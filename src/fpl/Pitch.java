@@ -21,7 +21,9 @@ public class Pitch extends JPanel {
         private final Color lineColor;
         private final Stroke stroke;
 
-    public Pitch(double width, double height, double pitchWidth, double pitchLength, Color lineColor, Stroke stroke) {
+        private JFrame frame;
+    public Pitch(double width, double height, double pitchWidth, double pitchLength, Color lineColor, Stroke stroke,JFrame frame) {
+        this.frame=frame;
         this.width = width;
         this.height = height;
         this.pitchWidth = pitchWidth;
@@ -30,22 +32,22 @@ public class Pitch extends JPanel {
         this.stroke = stroke;
 
         setBackground(new Color(0, 128, 0));
-        setPreferredSize(new Dimension(550, 350));
+        //setPreferredSize(new Dimension((int) width, (int) height));
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g.create();
-        double scaleWidth = this.pitchWidth+2;
-        double scaleHeight = this.pitchLength+2;
+        double scaleWidth = this.pitchWidth+3;
         double scale;
-        if((this.width/this.height) >= (110d/70d)) {
-            scale = height/scaleHeight;
+        if((this.width/this.height) >= (110/70)) {
+            scale = height/ this.pitchLength;
         } else {
             scale = this.width/scaleWidth;
         }
         g2.scale(scale, scale);
+
         g2.translate(1, 1);
         g2.setColor(this.lineColor);
         g2.setStroke(this.stroke);
