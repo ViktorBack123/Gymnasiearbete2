@@ -118,14 +118,4 @@ public class Pitch extends JPanel {
         g2.draw(new Arc2D.Double((this.pitchWidth/2)-10, this.pitchLength-12-10, 20, 20, 90-(extent/2), extent, Arc2D.OPEN));
         g2.draw(new Arc2D.Double((this.pitchWidth/2)-10, 12-10, 20, 20, 270-(extent/2), extent, Arc2D.OPEN));
     }
-
-
-
-
-
-
-
-
-
-
 }
