@@ -14,6 +14,11 @@ public class United implements Player {
     }
 
     @Override
+    public String getPosition() {
+        return null;
+    }
+
+    @Override
     public String getTeam() {
         return "United";
     }
