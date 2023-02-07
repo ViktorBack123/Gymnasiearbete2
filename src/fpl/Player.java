@@ -1,4 +1,8 @@
 package fpl;
 
-public class Player {
+public interface Player {
+    int getScore();
+
+    String getName();
+    String getTeam();
 }
