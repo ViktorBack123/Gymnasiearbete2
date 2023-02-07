@@ -13,9 +13,11 @@ public class Main extends JFrame{
     int midAmount=3;
     int forAmount=2;
     int y=20;
-    int playerSize = 90;
+    int playerSize = 45;
 
-    int space=45;
+    int playerHeight = 80;
+
+    int space=22;
 
     JPanel[] sections = new JPanel[4];
 
@@ -27,8 +29,8 @@ public class Main extends JFrame{
     ArrayList<Player> midfielders1 = new ArrayList<>();
     ArrayList<Player> forwards1 = new ArrayList<>();
 
-        double width = 700;
-        double height = 1100;
+        double width = 350;
+        double height = 550;
         double pitchWidth = 70;
         double pitchLength = 110;
         int i=0;
@@ -47,14 +49,13 @@ public class Main extends JFrame{
         for (JPanel p:sections) {
             p=new JPanel();
             p.setLayout(null);
-            p.setPreferredSize(new Dimension(1100/4,700));
-            p.setBounds(0,y,700,1100/4);
+            p.setBounds(0,y, (int) width, (int) (height/4));
             p.setOpaque(false);
             sections[i]=p;
             i++;
 
 
-            y+=1100/4;
+            y+=height/4;
             add(p);
         }
         goalie();
@@ -65,7 +66,7 @@ public class Main extends JFrame{
         add(pitch);
 
 
-        setSize((int) (dimension.getWidth()+5), (int) (dimension.getHeight()+25));
+        setSize((int) (dimension.getWidth()+10), (int) (dimension.getHeight()+50));
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -76,7 +77,7 @@ public class Main extends JFrame{
     public void goalie(){
         JPanel panel = new JPanel();
 
-        panel.setBounds((int) width/2-playerSize/2,20,playerSize,playerSize+100);
+        panel.setBounds((int) width/2-playerSize/2,20,playerSize,playerHeight);
         panel.setBackground(Color.gray);
         sections[3].add(panel);
     }
@@ -84,7 +85,7 @@ public class Main extends JFrame{
         int x0= (int) ((width-space*(amount-1)-playerSize*amount)/2);
         for (int j = 0; j < amount; j++) {
             JPanel panel = new JPanel();
-            panel.setBounds((x0+(j*(space+playerSize))),20,playerSize,playerSize+100);
+            panel.setBounds((x0+(j*(space+playerSize))),20,playerSize,playerHeight);
             panel.setBackground(Color.gray);
             sections[2].add(panel);
             defenders.add(panel);
@@ -96,7 +97,7 @@ public class Main extends JFrame{
         int x0= (int) ((width-space*(amount-1)-playerSize*amount)/2);
         for (int j = 0; j < amount; j++) {
             JPanel panel = new JPanel();
-            panel.setBounds((x0+(j*(space+playerSize))),20,playerSize,playerSize+100);
+            panel.setBounds((x0+(j*(space+playerSize))),20,playerSize,playerHeight);
             panel.setBackground(Color.gray);
             sections[1].add(panel);
             midfielders.add(panel);
@@ -107,7 +108,7 @@ public class Main extends JFrame{
         int x0= (int) ((width-space*(amount-1)-playerSize*amount)/2);
         for (int j = 0; j < amount; j++) {
             JPanel panel = new JPanel();
-            panel.setBounds(x0+(j*(space+playerSize)),20,playerSize,playerSize+100);
+            panel.setBounds(x0+(j*(space+playerSize)),20,playerSize,playerHeight);
             panel.setBackground(Color.gray);
             sections[0].add(panel);
             forwards.add(panel);
