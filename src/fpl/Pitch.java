@@ -22,7 +22,7 @@ public class Pitch extends JPanel {
         private final Stroke stroke;
 
         private JFrame frame;
-    public Pitch(double width, double height, double pitchWidth, double pitchLength, Color lineColor, Stroke stroke,JFrame frame) {
+    public Pitch(double width, double height, double pitchWidth, double pitchLength, Color lineColor, Stroke stroke) {
         this.frame=frame;
         this.width = width;
         this.height = height;

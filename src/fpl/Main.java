@@ -43,7 +43,9 @@ public class Main extends JFrame{
         Color color = Color.WHITE;
         Stroke stroke = new BasicStroke((float) 0.25);
 
-        Pitch pitch = new Pitch(width, height, pitchWidth, pitchLength, color, stroke,this);
+        // VAD HÄNDER
+
+        Pitch pitch = new Pitch(width, height, pitchWidth, pitchLength, color, stroke);
         pitch.setSize(dimension);
         getContentPane().setBackground(new Color(0, 128, 0));
         for (JPanel p:sections) {
