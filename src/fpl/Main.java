@@ -77,18 +77,22 @@ public class Main extends JFrame{
     }
 
     public void goalie(){
+        Images image = new Images();
         JPanel panel = new JPanel();
 
         panel.setBounds((int) width/2-playerSize/2,20,playerSize,playerHeight);
-        panel.setBackground(Color.gray);
+        panel.setOpaque(false);
+        panel.add(image.getImage("manchesterUnited"));
         sections[3].add(panel);
     }
     public void defenders(int amount){
         int x0= (int) ((width-space*(amount-1)-playerSize*amount)/2);
+        Images image = new Images();
         for (int j = 0; j < amount; j++) {
             JPanel panel = new JPanel();
             panel.setBounds((x0+(j*(space+playerSize))),20,playerSize,playerHeight);
-            panel.setBackground(Color.gray);
+            panel.setOpaque(false);
+            panel.add(image.getImage("manchesterUnited"));
             sections[2].add(panel);
             defenders.add(panel);
 
@@ -96,22 +100,26 @@ public class Main extends JFrame{
 
     }
     public void midfielders(int amount){
+        Images image = new Images();
         int x0= (int) ((width-space*(amount-1)-playerSize*amount)/2);
         for (int j = 0; j < amount; j++) {
             JPanel panel = new JPanel();
             panel.setBounds((x0+(j*(space+playerSize))),20,playerSize,playerHeight);
-            panel.setBackground(Color.gray);
+            panel.setOpaque(false);
+            panel.add(image.getImage("liverpool"));
             sections[1].add(panel);
             midfielders.add(panel);
         }
 
     }
     public void forwards(int amount){
+        Images image = new Images();
         int x0= (int) ((width-space*(amount-1)-playerSize*amount)/2);
         for (int j = 0; j < amount; j++) {
             JPanel panel = new JPanel();
             panel.setBounds(x0+(j*(space+playerSize)),20,playerSize,playerHeight);
-            panel.setBackground(Color.gray);
+            panel.setOpaque(false);
+            panel.add(image.getImage("manchesterUnited"));
             sections[0].add(panel);
             forwards.add(panel);
         }
