@@ -6,7 +6,9 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class readExcel {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
+        //ändra file encodings till windows 1252
+        read();
         // https://www.youtube.com/watch?v=Mrtw7NvMQvw
         ArrayList<String> name = new ArrayList<>();
         ArrayList<Integer> URLcode = new ArrayList<>();
@@ -27,6 +29,19 @@ public class readExcel {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+
+    }
+    private static void read() throws IOException {
+        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\gymnasiearbeteexcel.csv");
+        BufferedReader bufferedReader  =new BufferedReader(fileReader);
+        String row = bufferedReader.readLine();
+        row = bufferedReader.readLine();
+        int i=1;
+        while (row!=null) {
+            System.out.println(i + ". " + row);
+            row=bufferedReader.readLine();
+            i++;
         }
 
     }
