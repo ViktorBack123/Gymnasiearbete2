@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class readExcel {
     public static void main(String[] args) throws IOException {
@@ -16,30 +17,17 @@ public class readExcel {
 
         // Opens excel-file via popup window
 
-        JFileChooser openFileChooser = new JFileChooser();
-        openFileChooser.setDialogTitle("Open File");
-        openFileChooser.removeChoosableFileFilter(openFileChooser.getFileFilter());
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel File (.xlsx)","xlsx");
-        openFileChooser.setFileFilter(filter);
-
-        if (openFileChooser.showOpenDialog(null)== JFileChooser.APPROVE_OPTION){
-            File inputFile = openFileChooser.getSelectedFile();
-            try(FileInputStream in = new FileInputStream(inputFile)){
-
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
     }
     private static void read() throws IOException {
-        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\gymnasiearbeteexcel.csv");
+        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\gymnasiearbeteexcel3.csv");
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
         String row = bufferedReader.readLine();
         row = bufferedReader.readLine();
+        String[] arr;
         int i=1;
         while (row!=null) {
-            System.out.println(i + ". " + row);
+            arr=row.split(";");
+            System.out.println(i + ". namn: " + arr[0]+" URL: " + arr[1]+ " lag: " + arr[2]);
             row=bufferedReader.readLine();
             i++;
         }

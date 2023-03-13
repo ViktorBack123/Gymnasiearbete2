@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Grafik {
     JFrame frame = new JFrame();
