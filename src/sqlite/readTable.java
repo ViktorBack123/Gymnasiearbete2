@@ -17,10 +17,10 @@ public class readTable {
 
 
     /**
-     * select all rows in the warehouses table
+     * select all rows in the table
      */
     public void selectAll(){
-        String sql = "SELECT name,URL,team FROM players";
+        String sql = "SELECT name,URL,team FROM players order by URL asc";
 
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
@@ -38,9 +38,6 @@ public class readTable {
     }
 
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         readTable app = new readTable();
         app.selectAll();
