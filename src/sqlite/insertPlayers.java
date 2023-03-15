@@ -8,13 +8,21 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class insertPlayers {
     public static void main(String[] args) throws IOException, SQLException {
-        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\gymnasiearbeteexcel.csv");
+        new insertPlayers();
+    }
+
+    public insertPlayers() throws IOException, SQLException {
+        //FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
+        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
         String row = bufferedReader.readLine();
-        row = bufferedReader.readLine();
+        row=bufferedReader.readLine();
+        row=bufferedReader.readLine();
+        //row = bufferedReader.readLine();
         String[] arr;
         int i=1;
 
@@ -27,13 +35,70 @@ public class insertPlayers {
 
         //statement.setQueryTimeout(60);
 
-        String temp;
+
         while (row!=null) {
             arr=row.split(";");
-            //System.out.println(i + ". namn: " + arr[0]+" URL: " + arr[1]+ " lag: " + arr[2]);
-            arr[0] = arr[0].replace("'","''");
-            statement.executeUpdate("insert into players(name,URL,team) values ('"+arr[0]+"',"+arr[1]+",'"+arr[2]+"')");
-            System.out.println("insert into players(name,URL,team) values ('"+arr[0]+"',"+arr[1]+",'"+arr[2]+"')");
+            arr[1] = arr[1].replace("'","''");
+            arr[4] = arr[4].replace("'","''");
+            arr[9] = arr[9].replaceAll(",","");
+            //statement.executeUpdate("insert into players(name,URL,team) values ('"+arr[0]+"',"+arr[1]+",'"+arr[2]+"')");
+            System.out.println(i);
+            System.out.println("values('"+arr[1]+
+                    "','"+arr[4]+
+                    "',"+arr[7]+
+                    ","+arr[8]+
+                    ","+arr[9]+
+                    ","+arr[11]+
+                    ","+arr[12]+
+                    ","+arr[13]+
+                    ","+arr[14]+
+                    ","+arr[15]+
+                    ","+arr[17]+
+                    ","+arr[18]+
+                    ","+arr[19]+
+                    ","+arr[20]+
+                    ","+arr[21]+
+                    ","+arr[23]+
+                    ","+arr[24]+
+                    ","+arr[25]+")");
+            statement.executeUpdate(("insert into playersExtra(" +
+                            "name," +
+                            "team," +
+                            "Matches_Played," +
+                            "Starts," +
+                            "minutes," +
+                            "goals," +
+                            "assists," +
+                            "GnA," +
+                            "nonPenaltiesG," +
+                            "penalties," +
+                            "yellows," +
+                            "reds," +
+                            "xG," +
+                            "npxg," +
+                            "xag," +
+                            "prgc," +
+                            "prgp," +
+                            "prgr)values('"+arr[1]+
+                    "','"+arr[4]+
+                    "',"+arr[7]+
+                    ","+arr[8]+
+                    ","+arr[9]+
+                    ","+arr[11]+
+                    ","+arr[12]+
+                    ","+arr[13]+
+                    ","+arr[14]+
+                    ","+arr[15]+
+                    ","+arr[17]+
+                    ","+arr[18]+
+                    ","+arr[19]+
+                    ","+arr[20]+
+                    ","+arr[21]+
+                    ","+arr[23]+
+                    ","+arr[24]+
+                    ","+arr[25]+")"));
+            //System.out.println("insert into players(name,URL,team) values ('"+arr[0]+"',"+arr[1]+",'"+arr[2]+"')");
+
             row=bufferedReader.readLine();
             i++;
         }
