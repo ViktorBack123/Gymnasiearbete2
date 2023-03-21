@@ -17,7 +17,7 @@ public class insertPlayers {
 
     public insertPlayers() throws IOException, SQLException {
         //FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
-        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref2.csv");
+        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
         String row = bufferedReader.readLine();
         row=bufferedReader.readLine();
