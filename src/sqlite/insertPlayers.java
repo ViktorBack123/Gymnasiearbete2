@@ -17,9 +17,11 @@ public class insertPlayers {
 
     public insertPlayers() throws IOException, SQLException {
         //FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
-        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
+        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\test.txt");
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
         String row = bufferedReader.readLine();
+        row=bufferedReader.readLine();
+        row=bufferedReader.readLine();
         row=bufferedReader.readLine();
         row=bufferedReader.readLine();
         //row = bufferedReader.readLine();
@@ -37,7 +39,7 @@ public class insertPlayers {
 
 
         while (row!=null) {
-            arr=row.split(";");
+            arr=row.split(",");
             arr[1] = arr[1].replace("'","''");
             arr[4] = arr[4].replace("'","''");
             arr[9] = arr[9].replaceAll(",","");
@@ -45,7 +47,7 @@ public class insertPlayers {
             //statement.executeUpdate("insert into players(name,URL,team) values ('"+arr[0]+"',"+arr[1]+",'"+arr[2]+"')");
             System.out.print(i+". ");
             System.out.println(arr[1]);
-            statement.executeUpdate(("insert into playersExtra(" +
+           statement.executeUpdate(("insert into playersExtra(" +
                             "name," +
                             "team," +
                             "Matches_Played," +
@@ -81,7 +83,45 @@ public class insertPlayers {
                     ","+arr[23]+
                     ","+arr[24]+
                     ","+arr[25]+")"));
-            //System.out.println("insert into players(name,URL,team) values ('"+arr[0]+"',"+arr[1]+",'"+arr[2]+"')");
+
+
+            System.out.println("insert into playersExtra(" +
+                    "name," +
+                    "team," +
+                    "Matches_Played," +
+                    "Starts," +
+                    "minutes," +
+                    "goals," +
+                    "assists," +
+                    "GnA," +
+                    "nonPenaltiesG," +
+                    "penalties," +
+                    "yellows," +
+                    "reds," +
+                    "xG," +
+                    "npxg," +
+                    "xag," +
+                    "prgc," +
+                    "prgp," +
+                    "prgr)values('"+arr[1]+
+                    "','"+arr[4]+
+                    "',"+arr[7]+
+                    ","+arr[8]+
+                    ","+arr[9]+
+                    ","+arr[11]+
+                    ","+arr[12]+
+                    ","+arr[13]+
+                    ","+arr[14]+
+                    ","+arr[15]+
+                    ","+arr[17]+
+                    ","+arr[18]+
+                    ","+arr[19]+
+                    ","+arr[20]+
+                    ","+arr[21]+
+                    ","+arr[23]+
+                    ","+arr[24]+
+                    ","+arr[25]+")");
+
 
             row=bufferedReader.readLine();
             i++;
