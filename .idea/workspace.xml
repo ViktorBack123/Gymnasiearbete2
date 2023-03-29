@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ae85cd8-83e4-4af9-b038-7d1a30ede88d" name="Changes" comment="guigui">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/goalies/CreateTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/goalies/dropTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/goalies/insertGoalies.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/databases/gymnasiearbete.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/gymnasiearbete.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/TestKlass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/TestKlass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/insertPlayers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/insertPlayers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/ö.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/insertPlayers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/insertPlayers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goalies/CreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/goalies/CreateTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sqlite/createTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/createTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +39,26 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.readTable">
+  <component name="RunManager" selected="Application.createTable">
     <configuration name="CreateTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="goalies.CreateTable" />
       <module name="Gymnasiearbete" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="goalies.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="createTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sqlite.createTable" />
+      <module name="Gymnasiearbete" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sqlite.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,19 +92,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="insertPlayers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sqlite.insertPlayers" />
-      <module name="Gymnasiearbete" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sqlite.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="readTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sqlite.readTable" />
       <module name="Gymnasiearbete" />
@@ -113,11 +107,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.createTable" />
+        <item itemvalue="Application.CreateTable" />
         <item itemvalue="Application.readTable" />
         <item itemvalue="Application.insertGoalies" />
-        <item itemvalue="Application.CreateTable" />
         <item itemvalue="Application.dropTable" />
-        <item itemvalue="Application.insertPlayers" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +130,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1679395541860</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="guigui">
+      <created>1679923447627</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1679923447627</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

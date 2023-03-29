@@ -15,7 +15,7 @@ public class CreateTable {
         statement.setQueryTimeout(60);  // sets timeout
 
 
-        statement.executeUpdate("create table goalkeepers(" +
+        /*statement.executeUpdate("create table goalkeepers(" +
                 "name TEXT," +
                 "team TEXT," +
                 "position TEXT," +
@@ -30,7 +30,8 @@ public class CreateTable {
                 "penalties_against INTEGER," +
                 "savePercent_penalties DECIMAL)");
 
-        ResultSet rs = statement.executeQuery("select * from fromexcel");
+         */
+
 
 
 

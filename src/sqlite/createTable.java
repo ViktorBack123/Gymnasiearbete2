@@ -15,7 +15,7 @@ public class createTable {
         statement.setQueryTimeout(60);  // sets timeout
 
 
-        statement.executeUpdate(("create table playersExtra(" +
+        /*statement.executeUpdate(("create table playersExtra(" +
                 "name TEXT," +
                 "team TEXT," +
                 "Matches_Played INTEGER," +
@@ -37,6 +37,43 @@ public class createTable {
 
         ResultSet rs = statement.executeQuery("select * from fromexcel");
 
+         */
+
+        statement.executeUpdate("create table players(" +
+                "name TEXT," +
+                "position TEXT," +
+                "team TEXT," +
+                "Matches_Played INTEGER," +
+                "starts INTEGER," +
+                "minutes INTEGER," +
+                "goals INTEGER," +
+                "assists INTEGER," +
+                "penalties INTEGER," +
+                "yellows INTEGER," +
+                "reds INTEGER," +
+                "xG DECIMAL," +
+                "xAG DECIMAL," +
+                "prgC INTEGER," +
+                "prgP INTEGER," +
+                "prgR INTEGER," +
+                "touches INTEGER," +
+                "touches_attacking_third INTEGER," +
+                "touches_attacking_box INTEGER," +
+                "minutes_per_match INTEGER," +
+                "goalsallowed INTEGER," +
+                "xGA DECIMAL," +
+                "tackles INTEGER," +
+                "tacklesWon INTEGER," +
+                "defensive_errors INTEGER," +
+                "shortpasses_completed INTEGER," +
+                "shortpasses_percent DECIMAL," +
+                "mediumpasses_completed INTEGER," +
+                "mediumpasses_percent DECIMAL," +
+                "key_passes INTEGER," +
+                "passes_final_third INTEGER," +
+                "passes_box INTEGER)");
+
+        // ANVÄND ROWID
     }
 }
 
