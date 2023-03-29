@@ -2,10 +2,11 @@ package sqlite;
 
 import java.sql.*;
 
-public class readTable {
-    private Connection connect() {
+public class ReadTable {
+    public static Connection connect() {
         // SQLite's connection string
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        // String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -39,7 +40,7 @@ public class readTable {
 
 
     public static void main(String[] args) {
-        readTable app = new readTable();
+        ReadTable app = new ReadTable();
         app.selectAll();
     }
 }

@@ -28,7 +28,6 @@ public class Images {
     public JComponent getImage(String team){
         ImageIcon image = null;
 
-
         switch (team){
             case "arsenal"-> image = new ImageIcon(arsenal);
             case "astonVilla"-> image = new ImageIcon(astonVilla);
@@ -59,6 +58,7 @@ public class Images {
 
         return new JLabel(ny);
     }
+
 
 
 

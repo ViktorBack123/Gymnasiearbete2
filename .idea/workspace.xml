@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ae85cd8-83e4-4af9-b038-7d1a30ede88d" name="Changes" comment="guigui">
+    <list default="true" id="076ba7dc-7012-4894-ab10-17b5ab0b93dd" name="Changes" comment="jeejj&#10;&#10;# Conflicts:&#10;#&#9;out/production/Gymnasiearbete/fpl/Main.class&#10;#&#9;out/production/Gymnasiearbete/fpl/Pitch.class&#10;#&#9;out/production/Gymnasiearbete/fpl/Players.class">
+      <change afterPath="$PROJECT_DIR$/src/fpl/algoritm/Algoritm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fpl/algoritm/FPLRanking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/gymnasiearbete.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/gymnasiearbete.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goalies/CreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/goalies/CreateTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/createTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/createTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gymnasiearbete.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Gymnasiearbete.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/fpl/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/fpl/Images.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/fpl/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/fpl/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/readTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/readTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fpl/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/Images.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fpl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sqlite/readTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/ReadTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +45,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.createTable">
+  <component name="RunManager" selected="Application.ReadTable">
     <configuration name="CreateTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="goalies.CreateTable" />
       <module name="Gymnasiearbete" />
@@ -53,8 +59,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="createTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sqlite.createTable" />
+    <configuration name="ReadTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sqlite.ReadTable" />
       <module name="Gymnasiearbete" />
       <extension name="coverage">
         <pattern>
@@ -92,8 +98,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="readTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sqlite.readTable" />
+    <configuration name="insertPlayers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sqlite.insertPlayers" />
       <module name="Gymnasiearbete" />
       <extension name="coverage">
         <pattern>
@@ -107,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.createTable" />
-        <item itemvalue="Application.CreateTable" />
-        <item itemvalue="Application.readTable" />
+        <item itemvalue="Application.ReadTable" />
         <item itemvalue="Application.insertGoalies" />
+        <item itemvalue="Application.CreateTable" />
         <item itemvalue="Application.dropTable" />
+        <item itemvalue="Application.insertPlayers" />
       </list>
     </recent_temporary>
   </component>
@@ -130,13 +136,7 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1679395541860</updated>
     </task>
-    <task id="LOCAL−00002" summary="guigui">
-      <created>1679923447627</created>
-      <option name="number" value="LOCAL−00002" />
-      <option name="presentableId" value="LOCAL−00002" />
-      <updated>1679923447627</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
