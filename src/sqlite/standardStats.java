@@ -18,7 +18,8 @@ public class standardStats {
 
     public standardStats() throws IOException, SQLException {
         //FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
-        FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\standardStats.txt");
+        String file = "J:\\Min enhet\\Programmering\\GyA\\standardStats.txt";
+        FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
         String row = bufferedReader.readLine();
         row = bufferedReader.readLine();
