@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7ae85cd8-83e4-4af9-b038-7d1a30ede88d" name="Changes" comment="guigui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/Passing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/Passing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/gymnasiearbete.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/gymnasiearbete.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/insertPlayers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/insertPlayers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sqlite/PlayingTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/PlayingTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/Possession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/Possession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/defensive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/defensive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/insertPlayers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/insertPlayers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/standardStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/standardStats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +151,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1680093925136</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="guigui">
+      <created>1680100534389</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1680100534389</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
