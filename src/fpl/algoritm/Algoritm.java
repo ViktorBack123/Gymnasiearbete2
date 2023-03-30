@@ -2,11 +2,9 @@ package fpl.algoritm;
 
 import sqlite.ReadTable;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
-public class Algoritm {
+public class Algoritm extends ReadTable {
     private String name;
     private String position;
     private String team;
@@ -29,56 +27,64 @@ public class Algoritm {
     private int tackles;
     private int tacklesWon;
     private int defensiveErrors;
-    private int shortpassesCompleted;
-    private int mediumpassesCompleted;
+    private int shortPassesCompleted;
+    private int mediumPassesCompleted;
     private int keyPasses;
     private int passesFinalThird;
     private int passesBox;
     private double xG;
     private double xAG;
     private double xGA;
-    private double shortpassesPercentage;
-    private double mediumpassesPercentage;
+    private double shortPassesPercentage;
+    private double mediumPassesPercentage;
 
+    @Override
+    public void selectAll(){
+        String sql = "SELECT name,goals,team FROM playersextra order by goals asc";
 
-    public Algoritm(String name, String position, String team, int matchesPlayed, int starts, int minutes,
-                    int goals, int assists, int penalties, int yellows, int reds, int prgC,
-                    int prgP, int prgR, int touches, int touchesAttackingThird, int touchesAttackingBox,
-                    int minutesPerMatch, int goalsAllowed, int tackles, int tacklesWon, int defensiveErrors,
-                    int shortpassesCompleted, int mediumpassesCompleted, int keyPasses, int passesFinalThird,
-                    int passesBox, double xG, double xAG, double xGA, double shortpassesPercentage, double mediumpassesPercentage) {
-        this.name = name;
-        this.position = position;
-        this.team = team;
-        this.matchesPlayed = matchesPlayed;
-        this.starts = starts;
-        this.minutes = minutes;
-        this.goals = goals;
-        this.assists = assists;
-        this.penalties = penalties;
-        this.yellows = yellows;
-        this.reds = reds;
-        this.prgC = prgC;
-        this.prgP = prgP;
-        this.prgR = prgR;
-        this.touches = touches;
-        this.touchesAttackingThird = touchesAttackingThird;
-        this.touchesAttackingBox = touchesAttackingBox;
-        this.minutesPerMatch = minutesPerMatch;
-        this.goalsAllowed = goalsAllowed;
-        this.tackles = tackles;
-        this.tacklesWon = tacklesWon;
-        this.defensiveErrors = defensiveErrors;
-        this.shortpassesCompleted = shortpassesCompleted;
-        this.mediumpassesCompleted = mediumpassesCompleted;
-        this.keyPasses = keyPasses;
-        this.passesFinalThird = passesFinalThird;
-        this.passesBox = passesBox;
-        this.xG = xG;
-        this.xAG = xAG;
-        this.xGA = xGA;
-        this.shortpassesPercentage = shortpassesPercentage;
-        this.mediumpassesPercentage = mediumpassesPercentage;
+        try (Connection conn = ReadTable.connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)){
+
+            // loop through the result set
+            while (rs.next()) {
+                name = rs.getString("name");
+                position = rs.getString("position");
+                team = rs.getString("team");
+                matchesPlayed = rs.getInt("matches");
+                starts = rs.getInt("starts");
+                minutes = rs.getInt("minutes");
+                goals = rs.getInt("goals");
+                assists = rs.getInt("assists");
+                penalties = rs.getInt("penalties");
+                yellows = rs.getInt("yellows");
+                reds = rs.getInt("reds");
+                prgC = rs.getInt("prgC");
+                prgP = rs.getInt("prgP");
+                prgR = rs.getInt("prgR");
+                touches = rs.getInt("touches");
+                touchesAttackingThird = rs.getInt("touchesAttackingThird");
+                touchesAttackingBox = rs.getInt("touchesAttackingBox");
+                minutesPerMatch = rs.getInt("minutesPerMatch");
+                goalsAllowed = rs.getInt("goalsAllowed");
+                tackles = rs.getInt("tackles");
+                tacklesWon = rs.getInt("tacklesWon");
+                defensiveErrors = rs.getInt("defensiveErrors");
+                shortPassesCompleted = rs.getInt("shortPassesCompleted");
+                mediumPassesCompleted = rs.getInt("mediumPassesCompleted");
+                keyPasses = rs.getInt("keyPasses");
+                passesFinalThird = rs.getInt("passesFinalThird");
+                passesBox = rs.getInt("passesBox");
+                xG = rs.getDouble("xG");
+                xAG = rs.getDouble("xAG");
+                xGA = rs.getDouble("xGA");
+                shortPassesPercentage = rs.getDouble("shortPassesPercentage");
+                mediumPassesPercentage = rs.getDouble("mediumPassesPercentage");
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void main(String[] args) {
