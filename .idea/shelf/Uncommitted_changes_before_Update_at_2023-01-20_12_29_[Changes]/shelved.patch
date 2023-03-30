@@ -1,0 +1,68 @@
+Index: src/TestKlass.java
+===================================================================
+diff --git a/src/TestKlass.java b/src/TestKlass.java
+deleted file mode 100644
+--- a/src/TestKlass.java	(revision e2de3fcccaa96335461d9527bee079fc935036b5)
++++ /dev/null	(revision e2de3fcccaa96335461d9527bee079fc935036b5)
+@@ -1,16 +0,0 @@
+-import javax.swing.*;
+-import java.awt.*;
+-
+-public class TestKlass {
+-
+-
+-
+-
+-    public static void main(String[] args) {
+-
+-        System.out.println("detta är viktor");
+-        System.out.println("tja");
+-        System.out.println("men nu är det bosse");
+-        System.out.println("HEHEHAH");
+-    }
+-}
+Index: src/Grafik.java
+===================================================================
+diff --git a/src/Grafik.java b/src/Grafik.java
+deleted file mode 100644
+--- a/src/Grafik.java	(revision e2de3fcccaa96335461d9527bee079fc935036b5)
++++ /dev/null	(revision e2de3fcccaa96335461d9527bee079fc935036b5)
+@@ -1,38 +0,0 @@
+-import javax.swing.*;
+-import javax.swing.border.LineBorder;
+-import java.awt.*;
+-
+-public class Grafik {
+-    JFrame frame = new JFrame();
+-
+-    JButton[] players = new JButton[15];
+-
+-    JTextField[] textFields = new JTextField[15];
+-
+-    JPanel panel = new JPanel();
+-
+-
+-    public Grafik() {
+-        // Fönstret:
+-        frame.setLayout(new FlowLayout());
+-        frame.setSize(frame.getMaximumSize());
+-        frame.getContentPane().setBackground(new Color(31, 183, 13, 180));
+-
+-        // Spelarna:
+-        for (int i = 0; i < 15; i++) {
+-            players[i] = new JButton();
+-            players[i].setPreferredSize(new Dimension(100, 100));
+-            players[i].setBorder(new LineBorder(Color.BLACK,8));
+-            frame.add(players[i]);
+-        }
+-
+-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+-        frame.setVisible(true);
+-    }
+-
+-
+-
+-    public static void main(String[] args) {
+-        new Grafik();
+-    }
+-}

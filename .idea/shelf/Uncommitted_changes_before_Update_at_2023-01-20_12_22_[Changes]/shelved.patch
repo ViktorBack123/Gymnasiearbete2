@@ -1,0 +1,17 @@
+Index: src/fpl/Pitch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package fpl;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\n\r\npublic class Pitch extends JPanel {\r\n    private final int touchline;\r\n    private final int goalLine;\r\n    private final Color color;\r\n\r\n\r\n    public Pitch(int touchline, int goalLine, Color color) {\r\n        this.touchline = touchline;\r\n        this.goalLine = goalLine;\r\n        this.color = color;\r\n    }\r\n\r\n    @Override\r\n    protected void paintComponent(Graphics g) {\r\n        super.paintComponent(g);\r\n        g.setColor(color);\r\n\r\n\r\n    }\r\n    //aa\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/fpl/Pitch.java b/src/fpl/Pitch.java
+--- a/src/fpl/Pitch.java	(revision c27973727094cfbc906a8eedd2170d83dc86333e)
++++ b/src/fpl/Pitch.java	(date 1672869867327)
+@@ -22,5 +22,5 @@
+ 
+ 
+     }
+-    //aa
++
+ }
