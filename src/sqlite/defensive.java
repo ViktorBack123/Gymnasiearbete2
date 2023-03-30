@@ -10,13 +10,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 
-public class defensive {
-    public static void main(String[] args) throws SQLException, IOException {
-        new defensive();
-    }
+public class defensive extends Thread{
 
-    public defensive() throws SQLException, IOException {
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+    @Override
+    public void run() {
+
+    String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+
+    try {
 
         Connection connection = DriverManager.getConnection(url);
         Statement statement = connection.createStatement();
@@ -46,6 +47,9 @@ public class defensive {
 
             row=bufferedReader.readLine();
             i++;
+        }
+    }catch (SQLException|IOException e){
+        System.out.println(e);
         }
     }
 }

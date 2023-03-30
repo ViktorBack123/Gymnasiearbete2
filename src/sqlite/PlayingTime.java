@@ -10,15 +10,14 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class PlayingTime {
-    public static void main(String[] args) throws SQLException, IOException {
-        new PlayingTime();
-    }
+public class PlayingTime extends Thread{
+    @Override
+    public void run() {
 
-    public PlayingTime() throws SQLException, IOException {
+    String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
 
+    try {
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
 
         Connection connection = DriverManager.getConnection(url);
         Statement statement = connection.createStatement();
@@ -62,5 +61,8 @@ public class PlayingTime {
             row=bufferedReader.readLine();
             i++;
         }
+    }catch (SQLException|IOException e){
+        System.out.println(e);
+    }
     }
 }

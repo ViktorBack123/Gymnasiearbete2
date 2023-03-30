@@ -10,14 +10,14 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Possession {
-    public static void main(String[] args) throws SQLException, IOException {
-        new Possession();
-    }
+public class Possession extends Thread{
 
-    public Possession() throws IOException, SQLException {
+    @Override
+    public void run() {
 
         String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+
+        try {
 
         Connection connection = DriverManager.getConnection(url);
         Statement statement = connection.createStatement();
@@ -38,7 +38,6 @@ public class Possession {
             if(Objects.equals(arr[8], ""))arr[8]="0";
             if(Objects.equals(arr[10], ""))arr[12]="0";
             if(Objects.equals(arr[13], ""))arr[13]="0";
-            System.out.println(Arrays.toString(arr));
 
             /*
             touches 8
@@ -57,5 +56,9 @@ public class Possession {
             row=bufferedReader.readLine();
             i++;
         }
+        }catch (SQLException | IOException e){
+            System.out.println(e);
+        }
+
     }
 }

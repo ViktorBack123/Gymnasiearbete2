@@ -10,13 +10,14 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Passing {
-    public static void main(String[] args) throws SQLException, IOException {
-        new Passing();
-    }
+public class Passing extends Thread{
 
-    public Passing() throws SQLException, IOException {
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+    @Override
+    public void run() {
+
+        try {
+
+    String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
 
         Connection connection = DriverManager.getConnection(url);
         Statement statement = connection.createStatement();
@@ -81,6 +82,9 @@ public class Passing {
 
             row=bufferedReader.readLine();
             i++;
+        }
+        }catch (SQLException|IOException e){
+            System.out.println(e);
         }
     }
 }

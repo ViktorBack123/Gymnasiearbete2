@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ae85cd8-83e4-4af9-b038-7d1a30ede88d" name="Changes" comment="guigui">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/gymnasiearbete.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/gymnasiearbete.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/insertPlayers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/insertPlayers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/PlayingTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/PlayingTime.java" afterDir="false" />
-    </list>
+    <list default="true" id="7ae85cd8-83e4-4af9-b038-7d1a30ede88d" name="Changes" comment="guigui" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +152,13 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1680100534389</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="guigui">
+      <created>1680103255288</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1680103255288</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

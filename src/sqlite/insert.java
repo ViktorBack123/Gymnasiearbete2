@@ -10,13 +10,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class standardStats {
+public class insert {
 
     public static void main(String[] args) throws IOException, SQLException {
-        new standardStats();
+        new insert();
     }
 
-    public standardStats() throws IOException, SQLException {
+    public insert() throws IOException, SQLException {
         //FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
         String file = "J:\\Min enhet\\Programmering\\GyA\\standardStats.txt";
         FileReader fileReader = new FileReader(file);
