@@ -9,15 +9,15 @@ public class Main extends JFrame{
         new Main();
     }
 
-    int defAmount=5;
-    int midAmount=3;
-    int forAmount=2;
-    int y=20;
+    int defAmount = 5;
+    int midAmount = 3;
+    int forAmount = 2;
+    int y = 20;
     int playerSize = 45;
 
     int playerHeight = 80;
 
-    int space=22;
+    int space = 22;
 
     JPanel[] sections = new JPanel[4];
 
@@ -33,7 +33,7 @@ public class Main extends JFrame{
         double height = 550;
         double pitchWidth = 70;
         double pitchLength = 110;
-        int i=0;
+        int i = 0;
     public Main() {
         setLayout(null);
 
@@ -48,7 +48,7 @@ public class Main extends JFrame{
         Pitch pitch = new Pitch(width, height, pitchWidth, pitchLength, color, stroke);
         pitch.setSize(dimension);
         getContentPane().setBackground(new Color(0, 128, 0));
-        for (JPanel p:sections) {
+        for (JPanel p : sections) {
             p=new JPanel();
             p.setLayout(null);
             p.setBounds(0,y, (int) width, (int) (height/4));
@@ -60,11 +60,11 @@ public class Main extends JFrame{
             y+=height/4;
             add(p);
         }
-        goalie();
+        goalkeeper();
         defenders(defAmount);
         midfielders(midAmount);
         forwards(forAmount);
-        pitch.setBounds(0,5,(int)dimension.getWidth(),(int)dimension.getHeight());
+        pitch.setBounds(0,5,(int) dimension.getWidth(),(int) dimension.getHeight());
         add(pitch);
 
 
@@ -72,11 +72,10 @@ public class Main extends JFrame{
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-
         setVisible(true);
     }
 
-    public void goalie(){
+    public void goalkeeper(){
         Images image = new Images();
         JPanel panel = new JPanel();
 
