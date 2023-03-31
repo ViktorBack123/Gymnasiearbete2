@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class UpdateDatabase {
-    public static void main(String[] args) throws SQLException, IOException {
+    public static void main(String[] args){
         new UpdateDatabase();
     }
 
-    public UpdateDatabase() throws SQLException, IOException {
+    public UpdateDatabase(){
         StandardStats standardStats = new StandardStats();
         Possession possession =new Possession();
         PlayingTime playingTime = new PlayingTime();

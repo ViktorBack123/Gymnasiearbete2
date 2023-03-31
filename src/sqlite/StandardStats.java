@@ -55,10 +55,10 @@ public class StandardStats extends Thread{
                         "starts," + "minutes," + "goals," + "assists," +
                         "penalties," + "yellows," + "reds," + "xG," +
                         "xAG," + "prgC," + "prgP," + "prgR) = (" +arr[7]+
-                        "," + arr[8] + "," + arr[9] + "," + arr[11]+
-                        "," + arr[12] + ","+arr[15] + ","+arr[17]+
-                        "," + arr[18] +  ","+arr[19] + "," + arr[21]+
-                        "," + arr[23] + "," +arr[24] + ","+arr[25]+") WHERE rowid = " + i);
+                        "," + arr[8] + "," +  arr[9] + "," + arr[11]+
+                        "," + arr[12] + "," + arr[15] + ","+arr[17]+
+                        "," + arr[18] +  "," + arr[19] + "," + arr[21]+
+                        "," + arr[23] + "," + arr[24] + ","+arr[25]+") WHERE rowid = " + i);
 
                 
 

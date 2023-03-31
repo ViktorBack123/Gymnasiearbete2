@@ -14,6 +14,6 @@ public class dropTable {
         statement.setQueryTimeout(60);  // sets timeout
 
         //statement.executeUpdate("drop table players");
-        statement.executeUpdate("drop table playersExtra");
+        statement.executeUpdate("drop table players");
     }
 }

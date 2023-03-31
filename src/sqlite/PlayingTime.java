@@ -27,8 +27,8 @@ public class PlayingTime extends Thread{
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
         String row = bufferedReader.readLine();
-        //row = bufferedReader.readLine();
-        //row = bufferedReader.readLine();
+        row = bufferedReader.readLine();
+        row = bufferedReader.readLine();
 
         String[] arr;
         int i=1;
@@ -50,11 +50,11 @@ public class PlayingTime extends Thread{
                     ") = (" + arr[9] + ", " + arr[20] + ", " + arr[25] + ") WHERE rowid = " + i);
 
 
-            /*statement.executeUpdate("UPDATE players SET (" +
+            statement.executeUpdate("UPDATE players SET (" +
                     "Minutes_Per_Match, " + "goalsAllowed, " + "xGA" +
                     ") = (" + arr[9] + ", " + arr[20] + ", " + arr[25] + ") WHERE rowid = " + i);
 
-             */
+
 
 
 
