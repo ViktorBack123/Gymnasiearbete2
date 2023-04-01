@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="076ba7dc-7012-4894-ab10-17b5ab0b93dd" name="Changes" comment="">
+    <list default="true" id="076ba7dc-7012-4894-ab10-17b5ab0b93dd" name="Changes" comment="guigui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sqlite/Passing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/Passing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sqlite/PlayingTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/PlayingTime.java" afterDir="false" />
