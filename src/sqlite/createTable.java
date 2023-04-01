@@ -43,7 +43,7 @@ public class createTable {
                 "name TEXT," +
                 "position TEXT," +
                 "team TEXT," +
-                "Matches_Played INTEGER," +
+                "matchesPlayed INTEGER," +
                 "starts INTEGER," +
                 "minutes INTEGER," +
                 "goals INTEGER," +
@@ -57,21 +57,21 @@ public class createTable {
                 "prgP INTEGER," +
                 "prgR INTEGER," +
                 "touches INTEGER," +
-                "touches_attacking_third INTEGER," +
-                "touches_attacking_box INTEGER," +
-                "minutes_per_match INTEGER," +
-                "goalsallowed INTEGER," +
+                "touchesAttackingThird INTEGER," +
+                "touchesAttackingBox INTEGER," +
+                "minutesPerMatch INTEGER," +
+                "goalsAllowed INTEGER," +
                 "xGA DECIMAL," +
                 "tackles INTEGER," +
                 "tacklesWon INTEGER," +
-                "defensive_errors INTEGER," +
-                "shortpasses_completed INTEGER," +
-                "shortpasses_percent DECIMAL," +
-                "mediumpasses_completed INTEGER," +
-                "mediumpasses_percent DECIMAL," +
-                "key_passes INTEGER," +
-                "passes_final_third INTEGER," +
-                "passes_box INTEGER)");
+                "defensiveErrors INTEGER," +
+                "shortPassesCompleted INTEGER," +
+                "shortPassesPercent DECIMAL," +
+                "mediumPassesCompleted INTEGER," +
+                "mediumPassesPercent DECIMAL," +
+                "keyPasses INTEGER," +
+                "passesFinalThird INTEGER," +
+                "passesBox INTEGER)");
 
         // ANVÄND ROWID
     }

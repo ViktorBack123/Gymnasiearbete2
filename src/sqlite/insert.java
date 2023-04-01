@@ -48,7 +48,7 @@ public class insert {
                     "name," +
                     "position," +
                     "team," +
-                    "Matches_Played," +
+                    "matchesPlayed," +
                     "starts," +
                     "minutes," +
                     "goals," +
@@ -85,7 +85,7 @@ public class insert {
                     "name," +
                     "position," +
                     "team," +
-                    "Matches_Played," +
+                    "matchesPlayed," +
                     "starts," +
                     "minutes," +
                     "goals," +

@@ -46,7 +46,7 @@ public class PlayingTime extends Thread{
             */
 
             System.out.println("UPDATE players SET (" +
-                    "Minutes_Per_Match, " + "goalsAllowed, " + "xGA" +
+                    "minutesPerMatch, " + "goalsAllowed, " + "xGA" +
                     ") = (" + arr[9] + ", " + arr[20] + ", " + arr[25] + ") WHERE rowid = " + i);
 
 
