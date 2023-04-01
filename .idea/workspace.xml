@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="076ba7dc-7012-4894-ab10-17b5ab0b93dd" name="Changes" comment="guigui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/Passing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/Passing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/PlayingTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/PlayingTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/Possession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/Possession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/ReadTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/ReadTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/createTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/createTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/defensive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/defensive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sqlite/insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/insert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fpl/algorithms/Highest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/algorithms/Highest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fpl/algorithms/VikAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/algorithms/VikAlgorithm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +41,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.CreateTable">
+  <component name="RunManager">
     <configuration name="CreateTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="goalies.CreateTable" />
       <module name="Gymnasiearbete" />

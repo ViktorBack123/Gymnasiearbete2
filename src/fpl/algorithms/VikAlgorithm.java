@@ -46,35 +46,35 @@ public class VikAlgorithm {
     }
 
     public VikAlgorithm() throws SQLException, InterruptedException {
-        this.list.add("Matches_Played");
-        this.list.add("starts");
-        this.list.add("minutes");
-        this.list.add("goals");
-        this.list.add("assists");
-        this.list.add("penalties");
-        this.list.add("yellows");
-        this.list.add("reds");
-        this.list.add("xG");
-        this.list.add("xAG");
-        this.list.add("prgC");
-        this.list.add("prgP");
-        this.list.add("prgR");
-        this.list.add("touches");
-        this.list.add("touches_attacking_third");
-        this.list.add("touches_attacking_box");
-        this.list.add("minutes_per_match");
-        this.list.add("goalsallowed");
-        this.list.add("xGA");
-        this.list.add("tackles");
-        this.list.add("tacklesWon");
-        this.list.add("defensive_errors");
-        this.list.add("shortpasses_completed");
-        this.list.add("shortpasses_percent");
-        this.list.add("mediumpasses_completed");
-        this.list.add("mediumpasses_percent");
-        this.list.add("key_passes");
-        this.list.add("passes_final_third");
-        this.list.add("passes_box");
+        list.add("Matches_Played");
+        list.add("starts");
+        list.add("minutes");
+        list.add("goals");
+        list.add("assists");
+        list.add("penalties");
+        list.add("yellows");
+        list.add("reds");
+        list.add("xG");
+        list.add("xAG");
+        list.add("prgC");
+        list.add("prgP");
+        list.add("prgR");
+        list.add("touches");
+        list.add("touches_attacking_third");
+        list.add("touches_attacking_box");
+        list.add("minutes_per_match");
+        list.add("goalsallowed");
+        list.add("xGA");
+        list.add("tackles");
+        list.add("tacklesWon");
+        list.add("defensive_errors");
+        list.add("shortpasses_completed");
+        list.add("shortpasses_percent");
+        list.add("mediumpasses_completed");
+        list.add("mediumpasses_percent");
+        list.add("key_passes");
+        list.add("passes_final_third");
+        list.add("passes_box");
         ArrayList<Highest> parameters = new ArrayList();
 
         for(int i = 0; i < this.list.size(); ++i) {
@@ -82,11 +82,12 @@ public class VikAlgorithm {
             ((Highest)parameters.get(i)).print();
         }
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
         String sql = "SELECT * from players";
         Connection connection = DriverManager.getConnection(url);
-        Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery(sql);
+        PreparedStatement statement = connection.prepareStatement(sql);
+        ResultSet rs = statement.executeQuery();
         int playerId = 0;
 
         while(rs.next()) {
@@ -95,35 +96,35 @@ public class VikAlgorithm {
             var10000.print(var10001 + "|" + rs.getString("position") + "|");
             char var12 = rs.getString("position").charAt(0);
             String pos = "" + var12 + rs.getString("position").charAt(1);
-            this.matchesPlayed = rs.getInt("matches_played");
-            this.starts = rs.getInt("starts");
-            this.minutes = rs.getInt("minutes");
-            this.goals = rs.getInt("goals");
-            this.assists = rs.getInt("assists");
-            this.penalties = rs.getInt("penalties");
-            this.yellows = rs.getInt("yellows");
-            this.reds = rs.getInt("reds");
-            this.prgC = rs.getInt("prgC");
-            this.prgP = rs.getInt("prgP");
-            this.prgR = rs.getInt("prgR");
-            this.touches = rs.getInt("touches");
-            this.touchesAttackingThird = rs.getInt("touches_Attacking_Third");
-            this.touchesAttackingBox = rs.getInt("touches_Attacking_Box");
-            this.minutesPerMatch = rs.getInt("minutes_Per_Match");
-            this.goalsAllowed = rs.getInt("goalsAllowed");
-            this.tackles = rs.getInt("tackles");
-            this.tacklesWon = rs.getInt("tacklesWon");
-            this.defensiveErrors = rs.getInt("defensive_Errors");
-            this.shortPassesCompleted = rs.getInt("shortPasses_Completed");
-            this.mediumPassesCompleted = rs.getInt("mediumPasses_Completed");
-            this.keyPasses = rs.getInt("key_Passes");
-            this.passesFinalThird = rs.getInt("passes_Final_Third");
-            this.passesBox = rs.getInt("passes_Box");
-            this.xG = rs.getDouble("xG");
-            this.xAG = rs.getDouble("xAG");
-            this.xGA = rs.getDouble("xGA");
-            this.shortPassesPercentage = rs.getDouble("shortPasses_Percent");
-            this.mediumPassesPercentage = rs.getDouble("mediumPasses_Percent");
+            matchesPlayed = rs.getInt("matches_played");
+            starts = rs.getInt("starts");
+            minutes = rs.getInt("minutes");
+            goals = rs.getInt("goals");
+            assists = rs.getInt("assists");
+            penalties = rs.getInt("penalties");
+            yellows = rs.getInt("yellows");
+            reds = rs.getInt("reds");
+            prgC = rs.getInt("prgC");
+            prgP = rs.getInt("prgP");
+            prgR = rs.getInt("prgR");
+            touches = rs.getInt("touches");
+            touchesAttackingThird = rs.getInt("touches_Attacking_Third");
+            touchesAttackingBox = rs.getInt("touches_Attacking_Box");
+            minutesPerMatch = rs.getInt("minutes_Per_Match");
+            goalsAllowed = rs.getInt("goalsAllowed");
+            tackles = rs.getInt("tackles");
+            tacklesWon = rs.getInt("tacklesWon");
+            defensiveErrors = rs.getInt("defensive_Errors");
+            shortPassesCompleted = rs.getInt("shortPasses_Completed");
+            mediumPassesCompleted = rs.getInt("mediumPasses_Completed");
+            keyPasses = rs.getInt("key_Passes");
+            passesFinalThird = rs.getInt("passes_Final_Third");
+            passesBox = rs.getInt("passes_Box");
+            xG = rs.getDouble("xG");
+            xAG = rs.getDouble("xAG");
+            xGA = rs.getDouble("xGA");
+            shortPassesPercentage = rs.getDouble("shortPasses_Percent");
+            mediumPassesPercentage = rs.getDouble("mediumPasses_Percent");
             ++playerId;
             if (!pos.equals("GK")) {
                 switch (pos) {
@@ -141,13 +142,20 @@ public class VikAlgorithm {
 
     }
 
-    private void calcForward(int id, Statement statement) throws SQLException, InterruptedException {
-        System.out.println("h");
-        Thread.sleep(100L);
-        this.scores[id - 1] = 0.0;
-        System.out.println(id);
-        statement.executeUpdate("UPDATE players SET score = " + this.score + " WHERE rowid = " + id);
-        Thread.sleep(3000L);
+    private void calcForward(int id, PreparedStatement statement) throws InterruptedException {
+        try {
+            System.out.println("h");
+            Thread.sleep(100L);
+            //this.scores[id - 1] = 0.0;
+            System.out.println(id);
+            //statement.setInt(1, (int) this.score);
+            //statement.setInt(2, id);
+            statement.executeUpdate();
+            Thread.sleep(3000L);
+        } catch (SQLException e) {
+            // handle the SQL exception
+            e.printStackTrace();
+        }
     }
 
     private void calcMidfielder(int id, Statement statement) {
