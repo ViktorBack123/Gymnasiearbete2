@@ -1,5 +1,7 @@
 package sqlite;
 
+import fpl.algoritm.Algoritm;
+
 import java.sql.*;
 
 public class ReadTable {

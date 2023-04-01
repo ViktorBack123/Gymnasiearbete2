@@ -53,25 +53,25 @@ public class Passing extends Thread{
             passes_box 28
              */
             System.out.println("UPDATE players SET (" +
-                    "shortPasses_completed, " +
-                    "shortPasses_percent, " +
-                    "mediumPasses_completed, " +
-                    "mediumPasses_percent, " +
-                    "key_passes, " +
-                    "passes_final_third, " +
-                    "passes_box" +
+                    "shortPassesCompleted, " +
+                    "shortPassesPercent, " +
+                    "mediumPassesCompleted, " +
+                    "mediumPassesPercent, " +
+                    "keyPasses, " +
+                    "passesFinalThird, " +
+                    "passesBox" +
                     ") = (" + arr[8] + ", " + arr[10] + ", " + arr[13] +
                     ", " + arr[15] + ", " + arr[26] + ", " + arr[27] +
                     ", " + arr[28] + ") WHERE rowid = " + i);
 
             statement.executeUpdate("UPDATE players SET (" +
-                    "shortPasses_completed, " +
-                    "shortPasses_percent, " +
-                    "mediumPasses_completed, " +
-                    "mediumPasses_percent, " +
-                    "key_passes, " +
-                    "passes_final_third, " +
-                    "passes_box" +
+                    "shortPassesCompleted, " +
+                    "shortPassesPercent, " +
+                    "mediumPassesCompleted, " +
+                    "mediumPassesPercent, " +
+                    "keyPasses, " +
+                    "passesFinalThird, " +
+                    "passesBox" +
                     ") = (" + arr[8] + ", " + arr[10] + ", " + arr[13] +
                     ", " + arr[15] + ", " + arr[26] + ", " + arr[27] +
                     ", " + arr[28] + ") WHERE rowid = " + i);

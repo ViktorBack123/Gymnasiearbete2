@@ -45,12 +45,12 @@ public class Possession extends Thread{
             touches_attacking_box 13
              */
             System.out.println("UPDATE players SET (" +
-                    "touches, " + "touches_attacking_third, " + "touches_attacking_box" +
+                    "touches, " + "touchesAttackingThird, " + "touchesAttackingBox" +
                     ") = (" + arr[8] + ", " + arr[12] + ", " + arr[13] + ") WHERE rowid = " + i);
 
 
             statement.executeUpdate("UPDATE players SET (" +
-                    "touches, " + "touches_attacking_third, " + "touches_attacking_box" +
+                    "touches, " + "touchesAttackingThird, " + "touchesAttackingBox" +
                     ") = (" + arr[8] + ", " + arr[12] + ", " + arr[13] + ") WHERE rowid = " + i);
 
             row=bufferedReader.readLine();

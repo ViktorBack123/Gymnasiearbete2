@@ -41,9 +41,9 @@ public class defensive extends Thread{
             defensive_errors 23
              */
 
-            statement.executeUpdate("UPDATE players SET (defensive_errors,tacklesWon,tackles) = (" + arr[23] + ", " + arr[9] + ", " + arr[8] + ") WHERE rowid = " + i);
+            statement.executeUpdate("UPDATE players SET (defensiveErrors,tacklesWon,tackles) = (" + arr[23] + ", " + arr[9] + ", " + arr[8] + ") WHERE rowid = " + i);
 
-            System.out.println("UPDATE players SET (defensive_errors,tacklesWon,tackles) = (" + arr[23] + ", " + arr[9] + ", " + arr[8] + ") WHERE rowid = " + i);
+            System.out.println("UPDATE players SET (defensiveErrors,tacklesWon,tackles) = (" + arr[23] + ", " + arr[9] + ", " + arr[8] + ") WHERE rowid = " + i);
 
             row=bufferedReader.readLine();
             i++;
