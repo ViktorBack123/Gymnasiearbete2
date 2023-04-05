@@ -7,8 +7,8 @@ import java.sql.*;
 public class ReadTable {
     public static Connection connect() {
         // SQLite's connection string
-        // String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
-        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -23,7 +23,7 @@ public class ReadTable {
      * select all rows in the table
      */
     public void selectAll(){
-        String sql = "SELECT name, score FROM players order by goals asc";
+        String sql = "SELECT name, score,team FROM players order by goals asc";
 
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
@@ -31,7 +31,7 @@ public class ReadTable {
 
             // loop through the result set
             while (rs.next()) {
-                System.out.println(rs.getString("name") + "|" + rs.getDouble("score"));
+                System.out.println(rs.getString("team"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());

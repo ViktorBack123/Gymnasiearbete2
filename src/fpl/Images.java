@@ -29,26 +29,26 @@ public class Images {
         ImageIcon image = null;
 
         switch (team){
-            case "arsenal"-> image = new ImageIcon(arsenal);
-            case "astonVilla"-> image = new ImageIcon(astonVilla);
-            case "bournemouth"-> image = new ImageIcon(bournemouth);
-            case "brentford"-> image = new ImageIcon(brentford);
-            case "brighton"-> image = new ImageIcon(brighton);
-            case "chelsea"-> image = new ImageIcon(chelsea);
-            case "crystalPalace"-> image = new ImageIcon(crystalPalace);
-            case "everton"-> image = new ImageIcon(everton);
-            case "fulham"-> image = new ImageIcon(fulham);
-            case "leeds"-> image = new ImageIcon(leeds);
-            case "leicester"-> image = new ImageIcon(leicester);
-            case "liverpool"-> image = new ImageIcon(liverpool);
-            case "manchesterCity"-> image=new ImageIcon(manchesterCity);
-            case "manchesterUnited"-> image=new ImageIcon(manchesterUnited);
-            case "newcastle"-> image=new ImageIcon(newcastle);
-            case "nottingham"-> image=new ImageIcon(nottingham);
-            case "southampton"-> image=new ImageIcon(southampton);
-            case "tottenham"-> image=new ImageIcon(tottenham);
-            case "westHam"-> image=new ImageIcon(westHam);
-            case "wolverhampton"-> image=new ImageIcon(wolverhampton);
+            case "Arsenal"-> image = new ImageIcon(arsenal);
+            case "Aston Villa"-> image = new ImageIcon(astonVilla);
+            case "Bournemouth"-> image = new ImageIcon(bournemouth);
+            case "Brentford"-> image = new ImageIcon(brentford);
+            case "Brighton"-> image = new ImageIcon(brighton);
+            case "Chelsea"-> image = new ImageIcon(chelsea);
+            case "Crystal Palace"-> image = new ImageIcon(crystalPalace);
+            case "Everton"-> image = new ImageIcon(everton);
+            case "Fulham"-> image = new ImageIcon(fulham);
+            case "Leeds United"-> image = new ImageIcon(leeds);
+            case "Leicester City"-> image = new ImageIcon(leicester);
+            case "Liverpool"-> image = new ImageIcon(liverpool);
+            case "Manchester City"-> image=new ImageIcon(manchesterCity);
+            case "Manchester Utd"-> image=new ImageIcon(manchesterUnited);
+            case "Newcastle Utd"-> image=new ImageIcon(newcastle);
+            case "Nott'ham Forest"-> image=new ImageIcon(nottingham);
+            case "Southampton"-> image=new ImageIcon(southampton);
+            case "Tottenham"-> image=new ImageIcon(tottenham);
+            case "West Ham"-> image=new ImageIcon(westHam);
+            case "Wolves"-> image=new ImageIcon(wolverhampton);
         }
 
         assert image != null;

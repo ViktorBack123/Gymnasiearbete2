@@ -1,10 +1,23 @@
 package fpl;
 
-public interface Player {
-    int getScore();
+public class Player {
+    String name;
+    String team;
 
-    String getName();
-    String getPosition();
-    String getTeam();
+    public Player(String name, String team) {
+        String[] arr = name.split(" ");
+        arr=arr[arr.length-1].split("-");
+        name=arr[arr.length-1];
+        this.name=name;
+        this.team =team;
 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getTeam() {
+        return team;
+    }
 }
