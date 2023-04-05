@@ -41,7 +41,7 @@ public class StandardStats extends Thread{
             touches_attacking_third 12
             touches_attacking_box 13
              */
-                System.out.println("UPDATE players SET (Matches_Played," +
+                System.out.println("UPDATE players SET (matchesPlayed," +
                         "starts," + "minutes," + "goals," + "assists," +
                         "penalties," + "yellows," + "reds," + "xG," +
                         "xAG," + "prgC," + "prgP," + "prgR) = (" +arr[7]+
@@ -51,7 +51,7 @@ public class StandardStats extends Thread{
                         "," + arr[23] + "," +arr[24] + ","+arr[25]+") WHERE rowid = " + i);
 
 
-                statement.executeUpdate("UPDATE players SET (Matches_Played," +
+                statement.executeUpdate("UPDATE players SET (matchesPlayed," +
                         "starts," + "minutes," + "goals," + "assists," +
                         "penalties," + "yellows," + "reds," + "xG," +
                         "xAG," + "prgC," + "prgP," + "prgR) = (" +arr[7]+
