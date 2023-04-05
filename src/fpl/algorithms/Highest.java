@@ -24,6 +24,10 @@ public class Highest {
 
         rs = statement.executeQuery("select MIN(" + parameter + ") from players");
         lowest= rs.getDouble(1);
+
+        connection.close();
+        statement.close();
+        rs.close();
     }
 
     public double getHighest() {

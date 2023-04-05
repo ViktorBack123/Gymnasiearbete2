@@ -1,13 +1,17 @@
 package fpl.algorithms;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class Algorithm {
 
     Connection con;
 
     ResultSet rs;
+
+    String[] forward = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgC", "prgP", "prgR", "touches", "touchesAttackingThird", "touchesAttackingBox", "minutesPerMatch", "goalsAllowed", "xGA", "tackles", "tacklesWon", "defensiveErrors", "shortPassesCompleted", "shortPassesPercent", "mediumPassesCompleted", "mediumPassesPercent", "keyPasses", "passesFinalThird", "passesBox"};
+    String[] midfielder = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgC", "prgP", "prgR", "touches", "touchesAttackingThird", "touchesAttackingBox", "minutesPerMatch", "keyPasses", "passesFinalThird", "passesBox"};
+    String[] defender = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgC", "prgP", "prgR", "touches", "touchesAttackingThird", "touchesAttackingBox", "minutesPerMatch", "keyPasses", "passesFinalThird", "passesBox"};
+
 
 
 
@@ -17,8 +21,8 @@ public class Algorithm {
 
     public Algorithm(/*String url*/) throws SQLException, InterruptedException {
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
-        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
+        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
         String sql = "SELECT * from players";
         this.con = DriverManager.getConnection(url);
         Statement statement = this.con.createStatement();
@@ -33,26 +37,35 @@ public class Algorithm {
                 String pos = "" + var12 + rs.getString("position").charAt(1);
                 if (!pos.equals("GK")) {
                     switch (pos) {
-                        case "MF" -> this.calcMidfielder(playerId);
-                        case "DF" -> this.calcDefender(playerId);
-                        case "FW" -> this.calcForward(playerId);
+                        case "MF" -> this.calcScore(playerId, forward);
+                        case "DF" -> this.calcScore(playerId, forward);
+                        case "FW" -> this.calcScore(playerId, forward);
                     }
                 }
         }
 
     }
 
-    private void calcForward(int playerId) throws SQLException, InterruptedException {
+    private void calcScore(int playerId, String[] arr) throws SQLException, InterruptedException {
+        double score = 0;
+        double k = 0.2;
 
-        //int score = this.rs.getInt("name") + this.rs.getInt("xG");
+        for (String str: arr) {
+            Highest highest = new Highest(str);
+            double agg = (rs.getInt(str)-highest.getLowest())/(highest.getHighest()-highest.getLowest());
+            System.out.println(agg);
+            if (str.equals("yellows") | str.equals("reds") | str.equals("goalsAllowed") | str.equals("xGA") | str.equals("defensiveErrors"))
+                score -= (agg*k);
+            else
+                score += (agg*k);
 
-        int score = 0;
+        }
 
 
-        double goals = rs.getInt("goals");
-        int goalsMax = rs.getInt(1);
-        System.out.println(goals);
+        // score = this.rs.getInt("goals") + this.rs.getInt("xG");
 
+
+        //int score = 0;
         Statement statement = this.con.createStatement();
         statement.executeUpdate("UPDATE players SET score = "+ score +" WHERE rowid = " + playerId);
         //System.out.println(this.rs.getInt("penalties"));
@@ -61,13 +74,6 @@ public class Algorithm {
 
     }
 
-    private void calcMidfielder(int playerId) {
 
-
-    }
-
-    public void calcDefender(int playerId) {
-
-    }
 
 }

@@ -23,7 +23,7 @@ public class ReadTable {
      * select all rows in the table
      */
     public void selectAll(){
-        String sql = "SELECT name,goals,team FROM playersextra order by goals asc";
+        String sql = "SELECT name, score FROM players order by goals asc";
 
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
@@ -31,9 +31,7 @@ public class ReadTable {
 
             // loop through the result set
             while (rs.next()) {
-                System.out.println(rs.getString("name") + "|"+
-                        rs.getInt("Goals") + "|"+
-                        rs.getString("team") + "|");
+                System.out.println(rs.getString("name") + "|" + rs.getDouble("score"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
