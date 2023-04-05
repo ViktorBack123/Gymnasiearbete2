@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="076ba7dc-7012-4894-ab10-17b5ab0b93dd" name="Changes" comment="guigui">
+    <list default="true" id="076ba7dc-7012-4894-ab10-17b5ab0b93dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/fpl/algorithms/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/Passing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/Passing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/PlayingTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/PlayingTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/Possession.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/Possession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/gymnasiearbete.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/gymnasiearbete.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/UpdateDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/UpdateDatabase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/createTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/createTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/defensive.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/defensive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/insert.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/insert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/readTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/readTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/dropTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/dropTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fpl/algorithms/Highest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/algorithms/Highest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fpl/algorithms/VikAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/algorithms/VikAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fpl/algoritm/Algoritm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/algoritm/Algoritm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sqlite/createTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/createTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.VikAlgorithm">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="fpl.algorithms" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="CreateTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="goalies.CreateTable" />
       <module name="Gymnasiearbete" />
@@ -62,12 +67,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VikAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fpl.algorithms.VikAlgorithm" />
+    <configuration name="createTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sqlite.createTable" />
       <module name="Gymnasiearbete" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fpl.algorithms.*" />
+          <option name="PATTERN" value="sqlite.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,12 +80,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="createTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sqlite.createTable" />
+    <configuration name="insertGoalies" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="goalies.insertGoalies" />
       <module name="Gymnasiearbete" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sqlite.*" />
+          <option name="PATTERN" value="goalies.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.VikAlgorithm" />
+        <item itemvalue="Application.CreateTable" />
         <item itemvalue="Application.standardStats" />
         <item itemvalue="Application.createTable" />
-        <item itemvalue="Application.CreateTable" />
         <item itemvalue="Application.readTable" />
+        <item itemvalue="Application.insertGoalies" />
       </list>
     </recent_temporary>
   </component>
@@ -151,13 +156,7 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1680089506717</updated>
     </task>
-    <task id="LOCAL−00004" summary="guigui">
-      <created>1680188529446</created>
-      <option name="number" value="LOCAL−00004" />
-      <option name="presentableId" value="LOCAL−00004" />
-      <updated>1680188529446</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
