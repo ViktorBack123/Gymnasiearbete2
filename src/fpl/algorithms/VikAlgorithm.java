@@ -83,13 +83,13 @@ public class VikAlgorithm {
             ((Highest)parameters.get(i)).print();
         }
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
         String sql = "SELECT * from players";
         conn = DriverManager.getConnection(url);
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery(sql);
         int playerId = 0;
-
 
 
         while(rs.next()) {
@@ -102,6 +102,8 @@ public class VikAlgorithm {
                 this.starts = rs.getInt("starts");
                 this.minutes = rs.getInt("minutes");
                 this.goals = rs.getInt("goals");
+                System.out.println("goals");
+                System.out.println(goals);
                 this.assists = rs.getInt("assists");
                 this.penalties = rs.getInt("penalties");
                 this.yellows = rs.getInt("yellows");
@@ -132,32 +134,36 @@ public class VikAlgorithm {
                     switch (pos) {
                         case "MF" -> this.calcMidfielder(playerId, statement);
                         case "DF" -> this.calcDefender(playerId, statement);
-                        case "FW" -> this.calcForward(playerId, statement);
+                        case "FW" -> this.calcForward(playerId, conn);
                     }
                 }
         }
 
     }
 
-    private void calcForward(int id, Statement statement) throws SQLException, InterruptedException {
-        System.out.println("h");
+    private void calcForward(int id, Connection con) throws SQLException, InterruptedException {
+
         this.scores[id - 1] = 0.0;
         System.out.println(id);
-            statement.executeUpdate("UPDATE players SET score = " + this.score + " WHERE rowid = " + id);
+
+
+        Statement statement = con.createStatement();
+        statement.executeUpdate("UPDATE players SET score = 0 WHERE rowid = " + id);
 
         // Commit the transaction
-        conn.commit();
 
     }
 
     private void calcMidfielder(int id, Statement statement) {
-        System.out.println("hs");
+
         this.scores[id - 1] = 0.0;
         System.out.println(id);
     }
 
     public void calcDefender(int id, Statement statement) {
-        System.out.println("ha");
+
+
+
         this.scores[id - 1] = 0.0;
         System.out.println(id);
     }

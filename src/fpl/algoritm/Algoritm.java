@@ -1,10 +1,12 @@
 package fpl.algoritm;
 
+import fpl.algorithms.Highest;
 import sqlite.ReadTable;
 
 import java.sql.*;
+import java.util.ArrayList;
 
-public class Algoritm extends ReadTable {
+public class Algoritm {
     private String name;
     private String position;
     private String team;
@@ -38,48 +40,83 @@ public class Algoritm extends ReadTable {
     private double shortPassesPercentage;
     private double mediumPassesPercentage;
 
-    @Override
-    public void selectAll(){
-        String sql = "SELECT name,goals,team FROM playersextra order by goals asc";
+    private int playerId;
 
-        try (Connection conn = ReadTable.connect();
+    public Algoritm(ArrayList<String> list) {
+        list.add("matchesPlayed");
+        list.add("starts");
+        list.add("minutes");
+        list.add("goals");
+        list.add("assists");
+        list.add("penalties");
+        list.add("yellows");
+        list.add("reds");
+        list.add("xG");
+        list.add("xAG");
+        list.add("prgC");
+        list.add("prgP");
+        list.add("prgR");
+        list.add("touches");
+        list.add("touchesAttackingThird");
+        list.add("touchesAttackingBox");
+        list.add("minutesPerMatch");
+        list.add("goalsAllowed");
+        list.add("xGA");
+        list.add("tackles");
+        list.add("tacklesWon");
+        list.add("defensiveErrors");
+        list.add("shortPassesCompleted");
+        list.add("shortPassesPercent");
+        list.add("mediumPassesCompleted");
+        list.add("mediumPassesPercent");
+        list.add("keyPasses");
+        list.add("passesFinalThird");
+        list.add("passesBox");
+
+    }
+
+    public void databse(){
+        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
+        String sql = "SELECT * from players";
+
+        try (Connection conn = DriverManager.getConnection(url);
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
 
             // loop through the result set
             while (rs.next()) {
-                name = rs.getString("name");
-                position = rs.getString("position");
-                team = rs.getString("team");
-                matchesPlayed = rs.getInt("matches");
-                starts = rs.getInt("starts");
-                minutes = rs.getInt("minutes");
-                goals = rs.getInt("goals");
-                assists = rs.getInt("assists");
-                penalties = rs.getInt("penalties");
-                yellows = rs.getInt("yellows");
-                reds = rs.getInt("reds");
-                prgC = rs.getInt("prgC");
-                prgP = rs.getInt("prgP");
-                prgR = rs.getInt("prgR");
-                touches = rs.getInt("touches");
-                touchesAttackingThird = rs.getInt("touchesAttackingThird");
-                touchesAttackingBox = rs.getInt("touchesAttackingBox");
-                minutesPerMatch = rs.getInt("minutesPerMatch");
-                goalsAllowed = rs.getInt("goalsAllowed");
-                tackles = rs.getInt("tackles");
-                tacklesWon = rs.getInt("tacklesWon");
-                defensiveErrors = rs.getInt("defensiveErrors");
-                shortPassesCompleted = rs.getInt("shortPassesCompleted");
-                mediumPassesCompleted = rs.getInt("mediumPassesCompleted");
-                keyPasses = rs.getInt("keyPasses");
-                passesFinalThird = rs.getInt("passesFinalThird");
-                passesBox = rs.getInt("passesBox");
-                xG = rs.getDouble("xG");
-                xAG = rs.getDouble("xAG");
-                xGA = rs.getDouble("xGA");
-                shortPassesPercentage = rs.getDouble("shortPassesPercentage");
-                mediumPassesPercentage = rs.getDouble("mediumPassesPercentage");
+                this.name = rs.getString("name");
+                this.position = rs.getString("position");
+                this.team = rs.getString("team");
+                this.matchesPlayed = rs.getInt("matches");
+                this.starts = rs.getInt("starts");
+                this.minutes = rs.getInt("minutes");
+                this.goals = rs.getInt("goals");
+                this.assists = rs.getInt("assists");
+                this.penalties = rs.getInt("penalties");
+                this.yellows = rs.getInt("yellows");
+                this.reds = rs.getInt("reds");
+                this.prgC = rs.getInt("prgC");
+                this.prgP = rs.getInt("prgP");
+                this.prgR = rs.getInt("prgR");
+                this.touches = rs.getInt("touches");
+                this.touchesAttackingThird = rs.getInt("touchesAttackingThird");
+                this.touchesAttackingBox = rs.getInt("touchesAttackingBox");
+                this.minutesPerMatch = rs.getInt("minutesPerMatch");
+                this.goalsAllowed = rs.getInt("goalsAllowed");
+                this.tackles = rs.getInt("tackles");
+                this.tacklesWon = rs.getInt("tacklesWon");
+                this.defensiveErrors = rs.getInt("defensiveErrors");
+                this.shortPassesCompleted = rs.getInt("shortPassesCompleted");
+                this.mediumPassesCompleted = rs.getInt("mediumPassesCompleted");
+                this.keyPasses = rs.getInt("keyPasses");
+                this.passesFinalThird = rs.getInt("passesFinalThird");
+                this.passesBox = rs.getInt("passesBox");
+                this.xG = rs.getDouble("xG");
+                this.xAG = rs.getDouble("xAG");
+                this.xGA = rs.getDouble("xGA");
+                this.shortPassesPercentage = rs.getDouble("shortPassesPercentage");
+                this.mediumPassesPercentage = rs.getDouble("mediumPassesPercentage");
 
             }
         } catch (SQLException e) {
@@ -87,8 +124,24 @@ public class Algoritm extends ReadTable {
         }
     }
 
-    public static void main(String[] args) {
-        ReadTable.connect();
+    public static void main(String[] args)  {
+            ArrayList<String> list = new ArrayList<>();
+            Algoritm algoritm = new Algoritm(list);
+            ArrayList<Highest> parameters = new ArrayList();
+        try {
+            for (int i = 0; i < list.size(); ++i) {
+                parameters.add(new Highest((String) list.get(i)));
+                ((Highest) parameters.get(i)).print();
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        algoritm.databse();
+
+
+
+
+
 
 
 
