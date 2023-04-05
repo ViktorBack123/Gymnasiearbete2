@@ -1,7 +1,6 @@
 package fpl.algoritm;
 
 import fpl.algorithms.Highest;
-import sqlite.ReadTable;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -17,8 +17,8 @@ public class Algorithm {
 
     public Algorithm(/*String url*/) throws SQLException, InterruptedException {
 
-        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
-        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
         String sql = "SELECT * from players";
         this.con = DriverManager.getConnection(url);
         Statement statement = this.con.createStatement();
@@ -45,10 +45,17 @@ public class Algorithm {
     private void calcForward(int playerId) throws SQLException, InterruptedException {
 
         //int score = this.rs.getInt("name") + this.rs.getInt("xG");
+
         int score = 0;
+
+
+        double goals = rs.getInt("goals");
+        int goalsMax = rs.getInt(1);
+        System.out.println(goals);
+
         Statement statement = this.con.createStatement();
         statement.executeUpdate("UPDATE players SET score = "+ score +" WHERE rowid = " + playerId);
-        System.out.println(this.rs.getInt("penalties"));
+        //System.out.println(this.rs.getInt("penalties"));
 
         // Commit the transaction
 
