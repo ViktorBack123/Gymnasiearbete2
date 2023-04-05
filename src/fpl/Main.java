@@ -11,8 +11,11 @@ public class Main extends JFrame{
     }
 
     int defAmount = 0;
+    int defMax = 5;
     int midAmount = 0;
+    int midMax = 5;
     int forAmount = 0;
+    int forMax=3;
     int y = 20;
     int playerSize = 45;
 
@@ -72,34 +75,50 @@ public class Main extends JFrame{
 
         String position;
 
-        for (int j = 0; j < 11; j++) {
+        for (int j = 0; j < 10; j++) {
             rs.next();
             position=rs.getString("position").charAt(0)+""+rs.getString("position").charAt(1);
 
 
             switch (position){
                 case "MF"->{
-                    if (midAmount==5){
+                    if (midMax==0){
                         j--;
                     }else {
                         midfielders1.add(new Player(rs.getString("name"), rs.getString("team")));
+                        midMax--;
                         midAmount++;
+                        if ((midMax==0&&forMax!=0&&defMax!=0)){
+                            defMax--;
+                            forMax--;
+                        }
                     }
+
                 }
                 case "FW"->{
-                    if (forAmount == 3){
+                    if (forMax == 0){
                         j--;
                     }else {
                         forwards1.add(new Player(rs.getString("name"), rs.getString("team")));
+                        forMax--;
                         forAmount++;
+                        if ((forMax==0&&midMax!=0&&defMax!=0)){
+                            defMax--;
+                            midMax--;
+                        }
                     }
                 }
                 case "DF"->{
-                    if (defAmount==5){
+                    if (defMax==0){
                         j--;
                     }else {
                         defenders1.add(new Player(rs.getString("name"), rs.getString("team")));
+                        defMax--;
                         defAmount++;
+                        if ((defMax==0&&midMax!=0&&forMax!=0)){
+                            forMax--;
+                            midMax--;
+                        }
                     }
                 }
             }
