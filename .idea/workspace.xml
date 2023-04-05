@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076ba7dc-7012-4894-ab10-17b5ab0b93dd" name="Changes" comment="guigui">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/gymnasiearbete.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/gymnasiearbete.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/createTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/sqlite/createTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fpl/algorithms/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/algorithms/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fpl/algoritm/Algoritm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/algoritm/Algoritm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-03-29_20_27_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sqlite/createTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sqlite/createTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

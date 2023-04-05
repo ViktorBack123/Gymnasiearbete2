@@ -72,7 +72,8 @@ public class createTable {
                 "mediumPassesPercent DECIMAL," +
                 "keyPasses INTEGER," +
                 "passesFinalThird INTEGER," +
-                "passesBox INTEGER)");
+                "passesBox INTEGER," +
+                "score DECIMAL)");
 
         // ANVÄND ROWID
     }
