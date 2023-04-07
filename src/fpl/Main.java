@@ -1,7 +1,6 @@
 package fpl;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
