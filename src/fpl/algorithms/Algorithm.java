@@ -8,9 +8,10 @@ public class Algorithm {
 
     ResultSet rs;
 
-    String[] forward = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgC", "prgP", "prgR", "touches", "touchesAttackingThird", "touchesAttackingBox", "minutesPerMatch", "goalsAllowed", "xGA", "tackles", "tacklesWon", "defensiveErrors", "shortPassesCompleted", "shortPassesPercent", "mediumPassesCompleted", "mediumPassesPercent", "keyPasses", "passesFinalThird", "passesBox"};
-    String[] midfielder = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgC", "prgP", "prgR", "touches", "touchesAttackingThird", "touchesAttackingBox", "minutesPerMatch", "keyPasses", "passesFinalThird", "passesBox"};
-    String[] defender = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgC", "prgP", "prgR", "touches", "touchesAttackingThird", "touchesAttackingBox", "minutesPerMatch", "keyPasses", "passesFinalThird", "passesBox"};
+    String[] allStats = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgC", "prgP", "prgR", "touches", "touchesAttackingThird", "touchesAttackingBox", "minutesPerMatch", "goalsAllowed", "xGA", "tackles", "tacklesWon", "defensiveErrors", "shortPassesCompleted", "shortPassesPercent", "mediumPassesCompleted", "mediumPassesPercent", "keyPasses", "passesFinalThird", "passesBox"};
+    String[] forward = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgR", "touchesAttackingBox", "minutesPerMatch", "keyPasses"};
+    String[] midfielder = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgC", "prgP", "prgR", "touchesAttackingThird", "touchesAttackingBox", "minutesPerMatch", "goalsAllowed", "xGA", "keyPasses", "passesBox"};
+    String[] defender = {"matchesPlayed", "starts", "minutes", "goals", "assists", "penalties", "yellows", "reds", "xG", "xAG", "prgC", "prgP", "prgR", "touches", "touchesAttackingThird", "touchesAttackingBox", "minutesPerMatch", "goalsAllowed", "xGA", "tackles", "tacklesWon", "defensiveErrors", "shortPassesCompleted", "shortPassesPercent", "mediumPassesCompleted", "mediumPassesPercent", "keyPasses", "passesFinalThird", "passesBox"};
 
 
 
@@ -37,8 +38,8 @@ public class Algorithm {
                 String pos = "" + var12 + rs.getString("position").charAt(1);
                 if (!pos.equals("GK")) {
                     switch (pos) {
-                        case "MF" -> this.calcScore(playerId, forward);
-                        case "DF" -> this.calcScore(playerId, forward);
+                        case "DF" -> this.calcScore(playerId, defender);
+                        case "MF" -> this.calcScore(playerId, midfielder);
                         case "FW" -> this.calcScore(playerId, forward);
                     }
                 }
