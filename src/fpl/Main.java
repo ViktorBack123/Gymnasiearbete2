@@ -216,7 +216,7 @@ public class Main extends JFrame{
         String[] columnNames = {"Name","Team","Position","score"};
 
 
-        Object[][] list = new Object[550][4];
+        String[][] list = new String[550][4];
         String sql = "SELECT name, team, position, score FROM players order by score desc";
 
         String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
@@ -231,7 +231,7 @@ public class Main extends JFrame{
                 double score = rs.getDouble("score");
                 DecimalFormat format = new DecimalFormat("0.000");
                 String position = rs.getString("position").charAt(0)+""+rs.getString("position").charAt(1);
-                list[count]= new Object[]{rs.getString("name"), rs.getString("team"), position, format.format(score)};
+                list[count]= new String[]{rs.getString("name"), rs.getString("team"), position, format.format(score)};
                 count++;
             }
 
