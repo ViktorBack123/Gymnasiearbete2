@@ -15,6 +15,8 @@ public class Main extends JFrame{
     int midAmount = 0;
     int midMax = 5;
     int forAmount = 0;
+
+    int goalMax=1;
     int forMax=3;
     int y = 20;
     int playerSize = 45;
@@ -32,6 +34,8 @@ public class Main extends JFrame{
     ArrayList<Player> defenders1 = new ArrayList<>();
     ArrayList<Player> midfielders1 = new ArrayList<>();
     ArrayList<Player> forwards1 = new ArrayList<>();
+
+    Player goalkeeper;
 
         double width = 350;
         double height = 550;
@@ -81,6 +85,13 @@ public class Main extends JFrame{
 
 
             switch (position){
+                case "GK" ->{
+                        j--;
+                    if (goalMax!=0){
+                        goalkeeper = new Player(rs.getString("name"), rs.getString("team"));
+                        goalMax--;
+                    }
+                }
                 case "MF"->{
                     if (midMax==0){
                         j--;
@@ -147,7 +158,8 @@ public class Main extends JFrame{
 
         panel.setBounds((int) width/2-playerSize/2,20,playerSize,playerHeight);
         panel.setOpaque(false);
-        panel.add(image.getImage("Brighton"));
+        panel.add(image.getImage(goalkeeper.getTeam()));
+        panel.add(new JLabel(goalkeeper.getName()));
         sections[3].add(panel);
     }
     public void defenders(int amount){

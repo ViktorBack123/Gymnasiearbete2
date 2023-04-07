@@ -15,7 +15,7 @@ public class CreateTable {
         statement.setQueryTimeout(60);  // sets timeout
 
 
-        /*statement.executeUpdate("create table goalkeepers(" +
+        statement.executeUpdate("create table goalkeepers(" +
                 "name TEXT," +
                 "team TEXT," +
                 "position TEXT," +
@@ -28,9 +28,10 @@ public class CreateTable {
                 "save_percent DECIMAL," +
                 "clean_sheets INTEGER," +
                 "penalties_against INTEGER," +
-                "savePercent_penalties DECIMAL)");
+                "savePercent_penalties DECIMAL," +
+                "score DECIMAL)");
 
-         */
+
 
 
 

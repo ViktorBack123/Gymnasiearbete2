@@ -52,13 +52,12 @@ public class Algorithm {
 
         for (String str: arr) {
             Highest highest = new Highest(str);
-            double agg = (rs.getInt(str)-highest.getLowest())/(highest.getHighest()-highest.getLowest());
+            double agg = (rs.getDouble(str)-highest.getLowest())/(highest.getHighest()-highest.getLowest());
             System.out.println(agg);
             if (str.equals("yellows") | str.equals("reds") | str.equals("goalsAllowed") | str.equals("xGA") | str.equals("defensiveErrors"))
                 score -= (agg*k);
             else
                 score += (agg*k);
-
         }
 
 
