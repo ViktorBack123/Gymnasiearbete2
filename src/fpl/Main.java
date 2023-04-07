@@ -1,8 +1,12 @@
 package fpl;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.sql.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Main extends JFrame{
@@ -24,6 +28,8 @@ public class Main extends JFrame{
     int playerHeight = 100;
 
     int space = 22;
+
+    int tableWidth = 350;
 
     JPanel[] sections = new JPanel[4];
 
@@ -144,8 +150,9 @@ public class Main extends JFrame{
         pitch.setBounds(0,5,(int) dimension.getWidth(),(int) dimension.getHeight());
         add(pitch);
 
+        scrollPane();
 
-        setSize((int) (dimension.getWidth()+10), (int) (dimension.getHeight()+50));
+        setSize((int) (dimension.getWidth()+tableWidth+17), (int) (dimension.getHeight()+40));
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -204,4 +211,63 @@ public class Main extends JFrame{
             forwards.add(panel);
         }
     }
+
+
+    public void scrollPane() throws SQLException {
+        String[] columnNames = {"Name","Team","Position","score"};
+
+
+        Object[][] list = new Object[550][4];
+        String sql = "SELECT name, team, position, score FROM players order by score desc";
+
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+
+        Connection conn = DriverManager.getConnection(url);
+        Statement stmt  = conn.createStatement();
+        ResultSet rs    = stmt.executeQuery(sql);
+        int count=0;
+
+            // loop through the result set
+            while (rs.next()) {
+                double score = rs.getDouble("score");
+                DecimalFormat format = new DecimalFormat("0.000");
+                String position = rs.getString("position").charAt(0)+""+rs.getString("position").charAt(1);
+                list[count]= new Object[]{rs.getString("name"), rs.getString("team"), position, format.format(score)};
+                count++;
+            }
+
+            JPanel p;
+            p=new JPanel();
+            p.setLayout(null);
+            p.setOpaque(false);
+            p.setBounds((int) width,0,tableWidth,(int) height);
+            JTable table = new JTable(list,columnNames);
+            table.setBounds(0,0,tableWidth,(int)height);
+            System.out.println(width+" " + height);
+            resizeColumnWidth(table);
+
+            JScrollPane pane = new JScrollPane(table);
+            pane.setBounds(0,0,tableWidth,(int)height);
+            p.add(pane);
+            add(p);
+
+
+
+    }
+
+    public void resizeColumnWidth(JTable table) {
+        final TableColumnModel columnModel = table.getColumnModel();
+        for (int column = 0; column < table.getColumnCount(); column++) {
+            int width = 15; // Min width
+            for (int row = 0; row < table.getRowCount(); row++) {
+                TableCellRenderer renderer = table.getCellRenderer(row, column);
+                Component comp = table.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width +1 , width);
+            }
+            if(width > 300)
+                width=300;
+            columnModel.getColumn(column).setPreferredWidth(width);
+        }
+    }
+
 }

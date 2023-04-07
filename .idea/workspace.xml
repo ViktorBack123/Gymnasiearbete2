@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ae85cd8-83e4-4af9-b038-7d1a30ede88d" name="Changes" comment="guigui">
-      <change afterPath="$PROJECT_DIR$/src/goalies/GoalkeeperAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/goalies/GoalkeeperHighest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/goalies/TransferScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/gymnasiearbete.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/gymnasiearbete.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/goalies/CreateTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/goalies/CreateTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/fpl/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/fpl/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fpl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fpl/algorithms/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/algorithms/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goalies/CreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/goalies/CreateTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +162,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1680371231171</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="guigui">
+      <created>1680883709803</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1680883709803</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
