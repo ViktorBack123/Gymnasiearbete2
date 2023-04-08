@@ -49,7 +49,7 @@ public class Algorithm {
 
     private void calcScore(int playerId, String[] arr) throws SQLException, InterruptedException {
         double score = 0;
-        double k = 0.2;
+        double k = 0.3;
 
         for (String str: arr) {
             Highest highest = new Highest(str);

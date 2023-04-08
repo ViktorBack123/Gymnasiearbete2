@@ -83,19 +83,22 @@ public class Main extends JFrame{
         ResultSet rs    = stmt.executeQuery(sql);
 
         String position;
+        i=0;
 
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < 11; j++) {
+            i++;
+            System.out.println(defMax+" "+midMax+" "+forMax);
             rs.next();
             position=rs.getString("position").charAt(0)+""+rs.getString("position").charAt(1);
 
 
             switch (position){
                 case "GK" ->{
-                        j--;
                     if (goalMax!=0){
                         goalkeeper = new Player(rs.getString("name"), rs.getString("team"));
                         goalMax--;
-                    }
+                    }else
+                        j--;
                 }
                 case "MF"->{
                     if (midMax==0){
@@ -104,10 +107,9 @@ public class Main extends JFrame{
                         midfielders1.add(new Player(rs.getString("name"), rs.getString("team")));
                         midMax--;
                         midAmount++;
-                        if ((midMax==0&&forMax!=0&&defMax!=0)){
-                            defMax--;
-                            forMax--;
-                        }
+
+                        if (midMax==0&&defMax!=0)defMax--;
+                        if (midMax==0&&forMax!=0)forMax--;
                     }
 
                 }
@@ -118,10 +120,8 @@ public class Main extends JFrame{
                         forwards1.add(new Player(rs.getString("name"), rs.getString("team")));
                         forMax--;
                         forAmount++;
-                        if ((forMax==0&&midMax!=0&&defMax!=0)){
-                            defMax--;
-                            midMax--;
-                        }
+                        if (forMax==0&&midMax!=0)midMax--;
+                        if (forMax==0&&defMax!=0)defMax--;
                     }
                 }
                 case "DF"->{
@@ -131,10 +131,9 @@ public class Main extends JFrame{
                         defenders1.add(new Player(rs.getString("name"), rs.getString("team")));
                         defMax--;
                         defAmount++;
-                        if ((defMax==0&&midMax!=0&&forMax!=0)){
-                            forMax--;
-                            midMax--;
-                        }
+
+                        if (defMax==0&&midMax!=0)midMax--;
+                        if (defMax==0&&forMax!=0)forMax--;
                     }
                 }
             }
