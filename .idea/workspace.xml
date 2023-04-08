@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="076ba7dc-7012-4894-ab10-17b5ab0b93dd" name="Changes" comment="guigui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fpl/algorithms/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/algorithms/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/gymnasiearbete.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/gymnasiearbete.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gymnasiearbete/fpl/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gymnasiearbete/fpl/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fpl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fpl/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goalies/GoalkeeperAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/goalies/GoalkeeperAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goalies/GoalkeeperHighest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/goalies/GoalkeeperHighest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goalies/TransferScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/goalies/TransferScore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +50,7 @@
       <recent name="fpl.algorithms" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CreateTable">
+  <component name="RunManager">
     <configuration name="CreateTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="goalies.CreateTable" />
       <module name="Gymnasiearbete" />
@@ -148,7 +153,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1680089506717</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="guigui">
+      <created>1680910482565</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1680910482565</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

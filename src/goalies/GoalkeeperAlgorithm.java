@@ -1,8 +1,5 @@
 package goalies;
 
-import fpl.algorithms.Algorithm;
-import fpl.algorithms.Highest;
-
 import java.sql.*;
 
 public class GoalkeeperAlgorithm {
@@ -10,7 +7,7 @@ public class GoalkeeperAlgorithm {
 
     ResultSet rs;
 
-    String[] goalie = {"Matches_played",
+    String[] goalkeeper = {"Matches_played",
             "Starts",
             "minutes",
             "goals_against",
@@ -20,6 +17,8 @@ public class GoalkeeperAlgorithm {
             "clean_sheets",
             "penalties_against",
             "savePercent_penalties"};
+    double[] goalkeeper1 = {0.5, 0.5, 0.3, -1, -0.2, 0.4, 0.6, 0.8, -0.4375, 0.5};
+    // 1,8625
 
 
 
@@ -29,8 +28,8 @@ public class GoalkeeperAlgorithm {
 
     public GoalkeeperAlgorithm(/*String url*/) throws SQLException, InterruptedException {
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
-        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
+        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
         String sql = "SELECT * from goalkeepers";
         this.con = DriverManager.getConnection(url);
         Statement statement = this.con.createStatement();
@@ -41,22 +40,24 @@ public class GoalkeeperAlgorithm {
         while(rs.next()) {
             playerId++;
 
-            calcScore(playerId,goalie);
+            calcScore(playerId, goalkeeper);
         }
-
+        con.close();
+        statement.close();
+        rs.close();
     }
 
     private void calcScore(int playerId, String[] arr) throws SQLException, InterruptedException {
+        int i = 0;
         double score = 0;
-        double k = 0.7;
+
 
         for (String str: arr) {
             GoalkeeperHighest highest = new GoalkeeperHighest(str);
             double agg = (rs.getDouble(str)-highest.getLowest())/(highest.getHighest()-highest.getLowest());
-            if (str.equals("penalties_against")|str.equals("goals_against")|str.equals("SoT_against"))
-                score -= (agg*k);
-            else
-                score += (agg*k);
+
+                score += (agg*goalkeeper1[i]);
+                i++;
         }
         Statement statement = this.con.createStatement();
         System.out.println("nr: " + playerId);

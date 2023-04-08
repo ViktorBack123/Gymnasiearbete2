@@ -241,6 +241,7 @@ public class Main extends JFrame{
             p.setOpaque(false);
             p.setBounds((int) width,0,tableWidth,(int) height);
             JTable table = new JTable(list,columnNames);
+            table.setFocusable(false);
             table.setBounds(0,0,tableWidth,(int)height);
             System.out.println(width+" " + height);
             resizeColumnWidth(table);
