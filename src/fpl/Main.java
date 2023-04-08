@@ -74,8 +74,8 @@ public class Main extends JFrame{
             add(p);
         }
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
-        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
+        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
         Connection conn = DriverManager.getConnection(url);
         String sql = "SELECT name, team, position FROM players order by score desc";
 
@@ -218,7 +218,8 @@ public class Main extends JFrame{
         String[][] list = new String[550][4];
         String sql = "SELECT name, team, position, score FROM players order by score desc";
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
 
         Connection conn = DriverManager.getConnection(url);
         Statement stmt  = conn.createStatement();
@@ -228,7 +229,7 @@ public class Main extends JFrame{
             // loop through the result set
             while (rs.next()) {
                 double score = rs.getDouble("score");
-                DecimalFormat format = new DecimalFormat("0.000");
+                DecimalFormat format = new DecimalFormat("0.0000");
                 String position = rs.getString("position").charAt(0)+""+rs.getString("position").charAt(1);
                 list[count]= new String[]{rs.getString("name"), rs.getString("team"), position, format.format(score)};
                 count++;
@@ -240,6 +241,7 @@ public class Main extends JFrame{
             p.setOpaque(false);
             p.setBounds((int) width,0,tableWidth,(int) height);
             JTable table = new JTable(list,columnNames);
+            table.setFocusable(false);
             table.setBounds(0,0,tableWidth,(int)height);
             System.out.println(width+" " + height);
             resizeColumnWidth(table);
