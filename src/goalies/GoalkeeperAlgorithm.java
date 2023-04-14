@@ -28,8 +28,8 @@ public class GoalkeeperAlgorithm {
 
     public GoalkeeperAlgorithm(/*String url*/) throws SQLException, InterruptedException {
 
-        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
-        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
         String sql = "SELECT * from goalkeepers";
         this.con = DriverManager.getConnection(url);
         Statement statement = this.con.createStatement();
@@ -51,14 +51,18 @@ public class GoalkeeperAlgorithm {
         int i = 0;
         double score = 0;
 
+        double k;
 
         for (String str: arr) {
             GoalkeeperHighest highest = new GoalkeeperHighest(str);
             double agg = (rs.getDouble(str)-highest.getLowest())/(highest.getHighest()-highest.getLowest());
+            k= goalkeeper1[i]/Math.abs(goalkeeper1[i]);
+            k*=0.5;
 
-                score += (agg*goalkeeper1[i]);
+                score += (agg*k);
                 i++;
         }
+
         Statement statement = this.con.createStatement();
         System.out.println("nr: " + playerId);
         System.out.println(score);

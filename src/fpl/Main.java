@@ -74,8 +74,8 @@ public class Main extends JFrame{
             add(p);
         }
 
-        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
-        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
         Connection conn = DriverManager.getConnection(url);
         String sql = "SELECT name, team, position FROM players order by score desc";
 
@@ -215,11 +215,11 @@ public class Main extends JFrame{
         String[] columnNames = {"Name","Team","Position","score"};
 
 
-        String[][] list = new String[550][4];
+        String[][] list = new String[553][4];
         String sql = "SELECT name, team, position, score FROM players order by score desc";
 
-        //String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
-        String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
 
         Connection conn = DriverManager.getConnection(url);
         Statement stmt  = conn.createStatement();
@@ -254,7 +254,6 @@ public class Main extends JFrame{
 
 
     }
-
     public void resizeColumnWidth(JTable table) {
         final TableColumnModel columnModel = table.getColumnModel();
         for (int column = 0; column < table.getColumnCount(); column++) {
