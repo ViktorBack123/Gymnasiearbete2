@@ -4,10 +4,11 @@ package sqlite;
 import java.sql.*;
 
 public class ReadTable {
-    public static Connection connect() {
+    public Connection connect() { // tog bort static
         // SQLite's connection string
         String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
         //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
+
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -16,7 +17,6 @@ public class ReadTable {
         }
         return conn;
     }
-
 
     /**
      * select all rows in the table
@@ -36,7 +36,6 @@ public class ReadTable {
             System.out.println(e.getMessage());
         }
     }
-
 
     public static void main(String[] args) {
         ReadTable app = new ReadTable();

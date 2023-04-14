@@ -17,29 +17,25 @@ public class insert {
     }
 
     public insert() throws IOException, SQLException {
-        //FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
         String file = "J:\\Min enhet\\Programmering\\GyA\\standardStats.txt";
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
-        String row = bufferedReader.readLine();
+        String row = bufferedReader.readLine(); // behövs detta ens
         row = bufferedReader.readLine();
         row=bufferedReader.readLine();
-        //row = bufferedReader.readLine();
         String[] arr;
-        int i=1;
+        int i = 1; // används aldrig
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+        // String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
 
 
         Connection connection = DriverManager.getConnection(url);
         Statement statement = connection.createStatement();
-        ArrayList<String> d = new ArrayList<>();
+        ArrayList<String> d = new ArrayList<>(); // används aldrig
 
-        //statement.setQueryTimeout(60);
-
-
-        while (row!=null) {
-            arr=row.split(",");
+        while (row != null) {
+            arr = row.split(",");
             arr[1] = arr[1].replace("'","''");
             arr[4] = arr[4].replace("'","''");
             arr[9] = arr[9].replaceAll(",","");
@@ -77,9 +73,7 @@ public class insert {
                     ","+arr[24]+
                     ","+arr[25]+")"));
 
-
             System.out.println(Arrays.toString(arr));
-
 
             System.out.println("insert into players(" +
                     "name," +
@@ -114,8 +108,7 @@ public class insert {
                     ","+arr[24]+
                     ","+arr[25]+")");
 
-
-            row=bufferedReader.readLine();
+            row = bufferedReader.readLine();
             i++;
         }
     }

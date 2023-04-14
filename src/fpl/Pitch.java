@@ -23,7 +23,7 @@ public class Pitch extends JPanel {
 
         private JFrame frame;
     public Pitch(double width, double height, double pitchWidth, double pitchLength, Color lineColor, Stroke stroke) {
-        this.frame=frame;
+        this.frame = frame; // behövs detta verkligen
         this.width = width;
         this.height = height;
         this.pitchWidth = pitchWidth;
@@ -32,7 +32,6 @@ public class Pitch extends JPanel {
         this.stroke = stroke;
 
         setBackground(new Color(0, 128, 0));
-        //setPreferredSize(new Dimension((int) width, (int) height));
     }
 
     @Override

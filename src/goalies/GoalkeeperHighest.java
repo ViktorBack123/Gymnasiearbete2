@@ -10,11 +10,10 @@ public class GoalkeeperHighest {
     public GoalkeeperHighest(String parameter) throws SQLException {
         this.parameter = parameter;
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
-
-        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db";
-
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+        //String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
         Connection connection = DriverManager.getConnection(url);
+
         Statement statement = connection.createStatement();
         statement.setQueryTimeout(60);  // sets timeout
 
@@ -40,10 +39,10 @@ public class GoalkeeperHighest {
 
     public String getParameter() {
         return parameter;
-    }
+    } // är den nödvändig
 
     public void print(){
         System.out.println("stat: " + parameter + ", highest: " + highest + ", lowest: " + lowest);
-    }
+    } // är denna nödvändig
 }
 

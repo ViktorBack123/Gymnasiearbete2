@@ -15,7 +15,8 @@ public class defensive extends Thread{
     @Override
     public void run() {
 
-    String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+    String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+    // String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
 
     try {
 
@@ -26,29 +27,24 @@ public class defensive extends Thread{
         String file = "J:\\Min enhet\\Programmering\\GyA\\defensive.txt";
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
-        String row = bufferedReader.readLine();
+        String row = bufferedReader.readLine(); // vet ej om detta behövs
         row = bufferedReader.readLine();
         row = bufferedReader.readLine();
 
         String[] arr;
-        int i=1;
+        int i = 1;
 
-        while (row!=null) {
-            arr=row.split(",");
-            /*
-            tackles 8
-            tackles won 9
-            defensive_errors 23
-             */
+        while (row != null) {
+            arr = row.split(",");
 
             statement.executeUpdate("UPDATE players SET (defensiveErrors,tacklesWon,tackles) = (" + arr[23] + ", " + arr[9] + ", " + arr[8] + ") WHERE rowid = " + i);
 
             System.out.println("UPDATE players SET (defensiveErrors,tacklesWon,tackles) = (" + arr[23] + ", " + arr[9] + ", " + arr[8] + ") WHERE rowid = " + i);
 
-            row=bufferedReader.readLine();
+            row = bufferedReader.readLine();
             i++;
         }
-    }catch (SQLException|IOException e){
+    } catch (SQLException | IOException e){
         System.out.println(e);
         }
     }

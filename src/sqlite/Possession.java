@@ -15,35 +15,30 @@ public class Possession extends Thread{
     @Override
     public void run() {
 
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+        // String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
 
         try {
+            Connection connection = DriverManager.getConnection(url);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(60);
 
-        Connection connection = DriverManager.getConnection(url);
-        Statement statement = connection.createStatement();
-        statement.setQueryTimeout(60);
+            String file = "J:\\Min enhet\\Programmering\\GyA\\possession.txt";
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader  =new BufferedReader(fileReader);
+            String row = bufferedReader.readLine(); // Behövs detta verkligen
+            row = bufferedReader.readLine();
+            row = bufferedReader.readLine();
 
-        String file = "J:\\Min enhet\\Programmering\\GyA\\possession.txt";
-        FileReader fileReader = new FileReader(file);
-        BufferedReader bufferedReader  =new BufferedReader(fileReader);
-        String row = bufferedReader.readLine();
-        row = bufferedReader.readLine();
-        row = bufferedReader.readLine();
+            String[] arr;
+            int i = 1;
 
-        String[] arr;
-        int i=1;
+            while (row != null) {
+                arr = row.split(",");
+                if (Objects.equals(arr[8], "")) arr[8]="0";
+                if (Objects.equals(arr[10], "")) arr[12]="0";
+                if (Objects.equals(arr[13], "")) arr[13]="0";
 
-        while (row!=null) {
-            arr=row.split(",");
-            if(Objects.equals(arr[8], ""))arr[8]="0";
-            if(Objects.equals(arr[10], ""))arr[12]="0";
-            if(Objects.equals(arr[13], ""))arr[13]="0";
-
-            /*
-            touches 8
-            touches_attacking_third 12
-            touches_attacking_box 13
-             */
             System.out.println("UPDATE players SET (" +
                     "touches, " + "touchesAttackingThird, " + "touchesAttackingBox" +
                     ") = (" + arr[8] + ", " + arr[12] + ", " + arr[13] + ") WHERE rowid = " + i);
@@ -53,7 +48,7 @@ public class Possession extends Thread{
                     "touches, " + "touchesAttackingThird, " + "touchesAttackingBox" +
                     ") = (" + arr[8] + ", " + arr[12] + ", " + arr[13] + ") WHERE rowid = " + i);
 
-            row=bufferedReader.readLine();
+            row = bufferedReader.readLine();
             i++;
         }
         }catch (SQLException | IOException e){

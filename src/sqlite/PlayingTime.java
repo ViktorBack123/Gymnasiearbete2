@@ -14,51 +14,40 @@ public class PlayingTime extends Thread{
     @Override
     public void run() {
 
-    String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+        // String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
 
-    try {
+        try {
 
+            Connection connection = DriverManager.getConnection(url);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(60);
 
-        Connection connection = DriverManager.getConnection(url);
-        Statement statement = connection.createStatement();
-        statement.setQueryTimeout(60);
+            String file = "J:\\Min enhet\\Programmering\\GyA\\playingTime.txt";
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader  =new BufferedReader(fileReader);
+            String row = bufferedReader.readLine(); // behövs detta verkligen
+            row = bufferedReader.readLine();
+            row = bufferedReader.readLine();
 
-        String file = "J:\\Min enhet\\Programmering\\GyA\\playingTime.txt";
-        FileReader fileReader = new FileReader(file);
-        BufferedReader bufferedReader  =new BufferedReader(fileReader);
-        String row = bufferedReader.readLine();
-        row = bufferedReader.readLine();
-        row = bufferedReader.readLine();
+            String[] arr;
+            int i = 1;
 
-        String[] arr;
-        int i=1;
-
-        while (row!=null) {
-            arr=row.split(",");
-            if(Objects.equals(arr[8], ""))arr[9]="0";
-            if(Objects.equals(arr[10], ""))arr[20]="0";
-            if(Objects.equals(arr[13], ""))arr[25]="0";
-
-            /*
-            Min_per_match 9
-            goalsAllowed 20
-            xGA 25
-            */
+            while (row != null) {
+                arr = row.split(",");
+                if (Objects.equals(arr[8], "")) arr[9] = "0";
+                if (Objects.equals(arr[10], "")) arr[20] = "0";
+                if (Objects.equals(arr[13], "")) arr[25] = "0";
 
             System.out.println("UPDATE players SET (" +
                     "minutesPerMatch, " + "goalsAllowed, " + "xGA" +
                     ") = (" + arr[9] + ", " + arr[20] + ", " + arr[25] + ") WHERE rowid = " + i);
 
-
             statement.executeUpdate("UPDATE players SET (" +
                     "minutesPerMatch, " + "goalsAllowed, " + "xGA" +
                     ") = (" + arr[9] + ", " + arr[20] + ", " + arr[25] + ") WHERE rowid = " + i);
 
-
-
-
-
-            row=bufferedReader.readLine();
+            row = bufferedReader.readLine();
             i++;
         }
     }catch (SQLException|IOException e){

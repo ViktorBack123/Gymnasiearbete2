@@ -15,31 +15,6 @@ public class createTable {
         Statement statement = connection.createStatement();
         statement.setQueryTimeout(60);  // sets timeout
 
-
-        /*statement.executeUpdate(("create table playersExtra(" +
-                "name TEXT," +
-                "team TEXT," +
-                "Matches_Played INTEGER," +
-                "Starts INTEGER," +
-                "minutes INTEGER," +
-                "goals INTEGER," +
-                "assists INTEGER," +
-                "GnA INTEGER," +
-                "nonPenaltiesG INTEGER," +
-                "penalties INTEGER," +
-                "yellows INTEGER," +
-                "reds INTEGER," +
-                "xG DECIMAL," +
-                "npxg DECIMAL," +
-                "xag DECIMAL," +
-                "prgc INTEGER," +
-                "prgp INTEGER," +
-                "prgr INTEGER)"));
-
-        ResultSet rs = statement.executeQuery("select * from fromexcel");
-
-         */
-
         statement.executeUpdate("create table players(" +
                 "name TEXT," +
                 "position TEXT," +
@@ -74,8 +49,6 @@ public class createTable {
                 "passesFinalThird INTEGER," +
                 "passesBox INTEGER," +
                 "score DECIMAL)");
-
-        // ANVÄND ROWID
     }
 }
 

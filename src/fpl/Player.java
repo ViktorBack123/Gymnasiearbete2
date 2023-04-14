@@ -1,22 +1,18 @@
 package fpl;
 
 public class Player {
-    String name;
-    String team;
-
+    private String name;
+    private String team;
     public Player(String name, String team) {
         String[] arr = name.split("[ -]");
-        name=arr[arr.length-1];
-        this.name=name;
-        this.team =team;
-
+        name = arr[arr.length - 1];
+        this.name = name;
+        this.team = team;
     }
-
     public String getName() {
-        return name;
+        return this.name;
     }
-
     public String getTeam() {
-        return team;
+        return this.team;
     }
 }

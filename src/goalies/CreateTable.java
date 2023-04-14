@@ -8,12 +8,12 @@ public class CreateTable {
     }
 
     public CreateTable() throws SQLException {
-        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
+        String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
+        // String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
 
         Connection connection = DriverManager.getConnection(url);
         Statement statement = connection.createStatement();
         statement.setQueryTimeout(60);  // sets timeout
-
 
         statement.executeUpdate("create table goalkeepers(" +
                 "name TEXT," +
@@ -30,11 +30,5 @@ public class CreateTable {
                 "penalties_against INTEGER," +
                 "savePercent_penalties DECIMAL," +
                 "score DECIMAL)");
-
-
-
-
-
-
     }
 }

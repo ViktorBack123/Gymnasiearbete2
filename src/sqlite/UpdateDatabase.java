@@ -7,7 +7,6 @@ public class UpdateDatabase {
     public static void main(String[] args){
         new UpdateDatabase();
     }
-
     public UpdateDatabase(){
         StandardStats standardStats = new StandardStats();
         Possession possession =new Possession();
@@ -20,5 +19,4 @@ public class UpdateDatabase {
         passing.start();
         defensive.start();
     }
-
 }
