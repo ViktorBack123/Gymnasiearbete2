@@ -21,7 +21,6 @@ public class TransferScore {
         while (this.rs.next()){
             name = this.rs.getString("name");
             sql2 = "UPDATE players SET score = " + this.rs.getDouble("score") + " WHERE name = '" + name + "'";
-            System.out.println(sql2);
 
             statement = this.con.createStatement();
             statement.executeUpdate(sql2);

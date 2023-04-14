@@ -20,10 +20,7 @@ public class Pitch extends JPanel {
         private final double pitchLength;
         private final Color lineColor;
         private final Stroke stroke;
-
-        private JFrame frame;
     public Pitch(double width, double height, double pitchWidth, double pitchLength, Color lineColor, Stroke stroke) {
-        this.frame = frame; // behövs detta verkligen
         this.width = width;
         this.height = height;
         this.pitchWidth = pitchWidth;

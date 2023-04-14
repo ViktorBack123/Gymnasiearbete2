@@ -23,7 +23,7 @@ public class StandardStats extends Thread{
             String file = "J:\\Min enhet\\Programmering\\GyA\\standardStats.txt";
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader  =new BufferedReader(fileReader);
-            String row = bufferedReader.readLine(); // behövs detta verkligen
+            String row = bufferedReader.readLine();
             row = bufferedReader.readLine();
             row = bufferedReader.readLine();
 
@@ -58,7 +58,7 @@ public class StandardStats extends Thread{
                 i++;
             }
         } catch (SQLException | IOException e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -15,23 +15,19 @@ public class insertGoalies {
         new insertGoalies();
     }
     public insertGoalies() throws IOException, SQLException {
-        // Behövs det här
-        //FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\sportsref.csv");
         FileReader fileReader = new FileReader("J:\\Min enhet\\Programmering\\GyA\\goalies.txt");
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
         String row = bufferedReader.readLine();
         row = bufferedReader.readLine();
         row = bufferedReader.readLine();
         String[] arr;
-        int i = 1; // behövs detta
 
         String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db";
 
         Connection connection = DriverManager.getConnection(url);
         Statement statement = connection.createStatement();
-        ArrayList<String> d = new ArrayList<>(); // behövs detta
 
-        while (row!=null) {
+        while (row != null) {
             arr=row.split(",");
             arr[1] = arr[1].replace("'","''");
             arr[4] = arr[4].replace("'","''");
@@ -111,8 +107,7 @@ public class insertGoalies {
                     arr[22] + ", "+
                     arr[23] + ")");
 
-            row=bufferedReader.readLine();
-            i++;
+            row = bufferedReader.readLine();
         }
     }
 }

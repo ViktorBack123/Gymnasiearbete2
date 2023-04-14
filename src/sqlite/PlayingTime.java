@@ -13,12 +13,10 @@ import java.util.Objects;
 public class PlayingTime extends Thread{
     @Override
     public void run() {
-
         String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
         // String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
 
         try {
-
             Connection connection = DriverManager.getConnection(url);
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(60);
@@ -51,7 +49,7 @@ public class PlayingTime extends Thread{
             i++;
         }
     }catch (SQLException|IOException e){
-        System.out.println(e);
+        System.out.println(e.getMessage());
     }
     }
 }

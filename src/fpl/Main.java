@@ -84,7 +84,7 @@ public class Main extends JFrame{
             i++;
             System.out.println(this.defMax + " " + this.midMax + " " + this.forMax);
             rs.next();
-            position = rs.getString("position").charAt(0) + "" +rs.getString("position").charAt(1); // hårdkodat
+            position = rs.getString("position").charAt(0) + "" +rs.getString("position").charAt(1);
 
             switch (position){
                 case "GK" ->{

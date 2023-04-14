@@ -20,19 +20,16 @@ public class insert {
         String file = "J:\\Min enhet\\Programmering\\GyA\\standardStats.txt";
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader  =new BufferedReader(fileReader);
-        String row = bufferedReader.readLine(); // behövs detta ens
+        String row = bufferedReader.readLine();
         row = bufferedReader.readLine();
         row=bufferedReader.readLine();
         String[] arr;
-        int i = 1; // används aldrig
 
         String url = "jdbc:sqlite:J:\\Min enhet\\Programmering\\GyA\\GyA IntJ\\Gymnasiearbete\\databases\\gymnasiearbete.db"; // Viktor
         // String url = "jdbc:sqlite:J:\\Min enhet\\GyA\\databases\\gymnasiearbete.db"; // Axel
 
-
         Connection connection = DriverManager.getConnection(url);
         Statement statement = connection.createStatement();
-        ArrayList<String> d = new ArrayList<>(); // används aldrig
 
         while (row != null) {
             arr = row.split(",");
@@ -73,8 +70,6 @@ public class insert {
                     ","+arr[24]+
                     ","+arr[25]+")"));
 
-            System.out.println(Arrays.toString(arr));
-
             System.out.println("insert into players(" +
                     "name," +
                     "position," +
@@ -109,7 +104,6 @@ public class insert {
                     ","+arr[25]+")");
 
             row = bufferedReader.readLine();
-            i++;
         }
     }
 }
